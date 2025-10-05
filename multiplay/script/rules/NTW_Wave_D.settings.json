@@ -12,10 +12,13 @@
 	"timeHandicapM": 0.06,
 	"Kfinal": 2,
 	"expansionDirection" : "north",
-	"RESIDUAL": 100.00,
+	"RESIDUAL": null,
 	"INCREM_PAUSEM": 0.0,
-	"waterWave": false,
+	"waterLanding": false,
+	"waterStructure": false,
 	"playersManipulation": "AI",
 	"structs": ["REARM PAD"],
+	"disablePropulsions": ["wheeled01"],
+	"disableWeapons": ["CommandTurret1", "MG1Mk1"],
 	"enableExperience": false
 }

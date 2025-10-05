@@ -22,14 +22,19 @@ de faire avancer la recherche à la même vitesse que votre adversaire, mais en 
 `10c-Stone-Jungle-v3w.wz` n’est pas la seule disponible, mais celle qui est recommandée. Il est possible de modifier l’expansion de la map vers le Nord uniquement, pour ce faire, utilisez la map `10c-ntw_trail10pro2.wz` et les settings qui vont avec `multiplay/script/rules/settings.json_ntw_trail10pro2`, à mettre à la place de `multiplay/script/rules/settings.json`.
 
 ### Tuning
+Par défaut, le mod utilisera les fichiers suivants :
+- `multiplay/script/rules/templates.json`
+- `multiplay/script/rules/structure.json`
+- `multiplay/script/rules/research.json`
+- `multiplay/script/rules/settings.json`
 
-Tous les paramètres sont dans `multiplay/script/rules/settings.json`:
-
-```text
+Explication pour `settings.json`:
+```
 {
 	"protectTimeM": 4, # le temps avant la première vague
 	"totalGameTime": 90, # le temps qu’il faut avant que les unités débarquées n’atteigne le rang 16
 	"expansion": 10, # la vitesse d’expansion de la map, le nombre des carreaux qui s’ajoutent
+	"LZRADIUS": 4, # taille de chaque zone d'atterrissage
 	"startHeight": 35, # le radius de la zone de départ (où la hauteur, lorsque applicable)
 	"Kpower" : 0.25, # le multiplicateur de la taille de débarquement par le temps
 	"doublePowerM": 20, # le multiplicateur de la taille de débarquement par le temps au carré
@@ -41,14 +46,21 @@ Tous les paramètres sont dans `multiplay/script/rules/settings.json`:
 	"expansionDirection" : "north"/"all" # vers où la map va s’aggrandir: Nord uniquement ou toutes les directions
 	"RESIDUAL": 0.03, # une vague est considérée comme vaincue lorsqu'il ne reste plus que 3 % des unités
 	"INCREM_PAUSEM": 0.1, # à chaque vague, augmentez le délai entre les vagues en minutes
-	"waterWave": false, # les vagues peuvent débarquer dans l'eau
+	"waterLanding": false, # les unités peuvent atterrir dans l'eau
+	"waterStructure": false, # les structures peuvent apparaître sur l'eau
 	"playersManipulation": true, # modifications apportées à la base du joueur et restrictions au début du jeu
 	"structs": ["DEFENSE", "GENERIC", "REARM PAD"], # Types de structures autorisées
+	"disablePropulsions": ["wheeled01"], # Désactivez ces types de propulsion pour qu'ils n'apparaissent pas
+	"disableWeapons": ["CommandTurret1", "MG1Mk1"], # Empêchez ces armes d'apparaître
 	"enableExperience": true, # Grades des unités. Activé/Désactivé
 }
 ```
 
-
+Si des fichiers spécifiques à la carte sont présents, le mod les utilisera à la place. Par exemple, si la carte s'appelle « Calamity », le mod utilisera:
+- `multiplay/script/rules/Calamity.templates.json`
+- `multiplay/script/rules/Calamity.structure.json`
+- `multiplay/script/rules/Calamity.research.json`
+- `multiplay/script/rules/Calamity.settings.json`
 
 ## Conseils pour réussir
 - l’AI n’est pas très maline, et ne fait pas de distinction entre votre armée, les murs, et les points de défense, et va détruire méthodiquement tout ce qu’elle trouve. Construisez des défenses peu chères pour faire distraction.

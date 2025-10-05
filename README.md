@@ -5,7 +5,7 @@
 # Wave Defense MOD
 
 Mod changes skirmish mode to wave protection mode. Supports multiplayer.
-The mod is compatible with Warzone2100 version 4.2.0. Older versions of the game are not supported.
+The mod is compatible with Warzone2100 version 4.6.1. Older versions of the game are not supported.
 
 You start in the South frontier of the map. You only have a tiny stip of land available, everything else
 is blocked (but will be revealed as you go). You have 4 minutes to prepare for the first attack.
@@ -31,7 +31,7 @@ Read more https://github.com/Warzone2100/warzone2100/blob/master/README.md#confi
 - Add one `waveAI` to the last slot. AI difficulty level will affect the number of enemy units.
 - Only the host needs to enable the mod.
 
-## Tuning and maps
+## Settings and maps
 ### Choosing a map
 You can use any map, but `10c-Stone-Jungle-v3w.wz` is recommended.
 Another mode is supported, when the map is expanding to North, for that
@@ -44,14 +44,20 @@ When choosing another map:
 - must not contain large, sharp cliffs
 - in the center (or in the south, with one-side expansion) must be an area suitable for your own base building. Spawn points don't depend on location of your HQ.
 
-### Tuning
-All parameters are in `multiplay/script/rules/settings.json`:
+### Settings
+By default, the mod will use the following files:
+- `multiplay/script/rules/templates.json`
+- `multiplay/script/rules/structure.json`
+- `multiplay/script/rules/research.json`
+- `multiplay/script/rules/settings.json`
 
+Explanation for `settings.json`:
 ```
 {
 	"protectTimeM": 4, # minutes until first wave
 	"totalGameTime": 90, # time in minutes until enemies reach the rank 16
 	"expansion": 10, # tile growth after each wave
+	"LZRADIUS": 4, # size of each landing
 	"startHeight": 35, # initial map height when using one-side expansion mode, or the initial radius otherwise 
 	"Kpower" : 0.25, # linear wave growth factor, depends on time
 	"doublePowerM": 20, # quadratic wave growth factor, depends on time
@@ -63,12 +69,22 @@ All parameters are in `multiplay/script/rules/settings.json`:
 	"expansionDirection": "north"/"all", # expansion direction
 	"RESIDUAL": 0.03, # a wave is considered defeated when only 3% of units remain
 	"INCREM_PAUSEM": 0.1, # each wave, increase the delay between waves in minutes
-	"waterWave": false, # waves can land in water
+	"waterLanding": false, # units can land in water
+	"waterStructure": false, # structures can appear on water
 	"playersManipulation": true, # change the player's base and limits at start
 	"structs": ["DEFENSE", "GENERIC", "REARM PAD"], # allowed structure types
+	"disablePropulsions": ["wheeled01"], # disable these propulsion types from spawning
+	"disableWeapons": ["CommandTurret1", "MG1Mk1"], # disable these weapons from spawning
 	"enableExperience": true # unit ranks. on/off
 }
-``` 
+```
+
+If map-specific files are present, the mod will use them instead. For example, if the map is named "Calamity", then the mod will use:
+- `multiplay/script/rules/Calamity.templates.json`
+- `multiplay/script/rules/Calamity.structure.json`
+- `multiplay/script/rules/Calamity.research.json`
+- `multiplay/script/rules/Calamity.settings.json`
+
 
 ## Tricks & hints
 - Enemies don't make any difference between a structure or a droid. You could use 

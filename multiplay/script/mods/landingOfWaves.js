@@ -10,13 +10,11 @@ namespace("wa_");
 
 // константы типы волн
 var WAVETYPE = ["NORMAL", "ROYAL"];
-var {waveDifficulty, AI} = getWaveAI(); //num wawe AI
-var wave = {time:0, active: false };
+var { waveDifficulty, AI } = getWaveAI(); //num wawe AI
+var wave = { time: 0, active: false };
 var numberWave = 0;
 var BORDER = 4;
 var LZRADIUS = null; // initialize in loadSettings()
-var RESIDUAL = null; // initialize in loadSettings()
-var INCREM_PAUSEM = null; // initialize in loadSettings()
 
 
 function getWaveAI()
@@ -28,70 +26,28 @@ function getWaveAI()
 	{
 		AI = scavengerPlayer;
 		waveDifficulty = (scavengers + 2) / 3; //general danger of waves 1, 1.33
-
 	}
 	else
 	{
-		for (var playnum = 0; playnum < maxPlayers; playnum++)
+		for (let playnum = 0; playnum < maxPlayers; playnum++)
 		{
-			if (
-				playerData[playnum].isAI == true &&
-      playerData[playnum].name == "Wave"
-			)
+			if (playerData[playnum].isAI && playerData[playnum].name == "Wave")
 			{
 				AI = playnum;
 				waveDifficulty = (playerData[AI].difficulty + 2) / 3; //general danger of waves 0.66, 1, 1.33, 1.6
 			}
 		}
 	}
-	return {AI:AI, waveDifficulty: waveDifficulty};
-}
-
-function loadSettings()
-{
-	const cleanMapName = mapName.replace(/-T[1-4]$/, "");
-	const settingsName = [cleanMapName, "settings.json"].join(".");
-
-	let defaultSettings = includeJSON("settings.json");
-	if (!defaultSettings)
-	{
-		throw new Error("Missing default settings file: multiplay/script/rules/settings.json");
-	}
-
-	let customSettings = includeJSON(settingsName);
-	if (!customSettings)
-	{
-		customSettings = {};
-
-		const str = settingsName + _(" settings file not found\nUsing default settings");
-		debug(str);
-		console(str);
-	}
-
-	settings = {
-		...defaultSettings,
-		...customSettings
-	}
-
-	LZRADIUS = settings.LZRADIUS;
-	RESIDUAL = settings.RESIDUAL;
-	INCREM_PAUSEM = settings.INCREM_PAUSEM;
-}
-
-function loadData()
-{
-	allTemplates = includeJSON("templates.json");
-	allStructs = includeJSON("structure.json");
-	research = includeJSON("research.json");
-
-	// Needle Gun is better than Heavy Cannon
-	research["R-Wpn-RailGun01"].redComponents.push("Cannon375mmMk1");
+	return { AI: AI, waveDifficulty: waveDifficulty };
 }
 
 function wa_eventGameInit()
 {
-	loadSettings();
-	loadData();
+	const cleanMapName = mapName.replace(/-T[1-4]$/, "");
+	loadSettings(cleanMapName);
+	loadData(cleanMapName);
+	overrideData();
+
 	if (settings.expansionDirection == "all")
 	{
 		const {x, y, x2, y2} = {x:(mapWidth-settings.startHeight)/2, y:(mapHeight-settings.startHeight)/2, x2:(mapWidth+settings.startHeight)/2, y2:(mapHeight+settings.startHeight)/2 };
@@ -118,6 +74,68 @@ function wa_eventGameInit()
 	avalibleScavComponents(AI);
 }
 
+function loadSettings(map)
+{
+	const settingsName = `${map}.settings.json`;
+
+	let defaultSettings = includeJSON("settings.json");
+	if (!defaultSettings)
+	{
+		throw new Error("Missing default settings file: multiplay/script/rules/settings.json");
+	}
+
+	let customSettings = includeJSON(settingsName);
+	if (!customSettings)
+	{
+		customSettings = {};
+
+		const str = settingsName + _(" settings file not found\nUsing default settings");
+		debug(str);
+		console(str);
+	}
+
+	settings = {
+		...defaultSettings,
+		...customSettings
+	};
+
+	LZRADIUS = settings.LZRADIUS;
+}
+
+function loadData(map)
+{
+	const defaultTemplates = includeJSON("templates.json");
+	const defaultStructure = includeJSON("structure.json");
+	const defaultResearch = includeJSON("research.json");
+
+	const customTemplates = includeJSON(`${map}.templates.json`);
+	const customStructure = includeJSON(`${map}.structure.json`);
+	const customResearch = includeJSON(`${map}.research.json`);
+
+	allTemplates = customTemplates || defaultTemplates;
+	allStructs = customStructure || defaultStructure;
+	research = customResearch || defaultResearch;
+
+	if (!allTemplates)
+	{
+		throw new Error(`Missing ${map}.templates.json and templates.json in multiplay/script/rules/`);
+	}
+	if (!allStructs)
+	{
+		throw new Error(`Missing ${map}.structure.json and structure.json in multiplay/script/rules/`);
+	}
+	if (!research)
+	{
+		throw new Error(`Missing ${map}.research.json and research.json in multiplay/script/rules/`);
+	}
+}
+
+function overrideData()
+{
+	// Needle Gun is better than Heavy Cannon
+	research["R-Wpn-RailGun01"].redComponents.push("Cannon375mmMk1");
+}
+
 function scheduler()
 {
 	// пропускаем стартовые минуты
@@ -126,8 +144,7 @@ function scheduler()
 		queue("scheduler", 6*1000);
 		return;
 	}
-	wave.droids = enumDroid(AI, "DROID_WEAPON").filter((d) => {return (!d.isVTOL && d.canHitGround);});
-
+	wave.droids = enumDroid(AI, "DROID_WEAPON").filter(d => !d.isVTOL && d.canHitGround);
 
 	// отразили финальную волну
 	if (wave.droids.length == 0 && wave.active == true && wave.budget <= 0 && wave.type == "FINAL")
@@ -136,12 +153,11 @@ function scheduler()
 		return;
 	}
 
-
 	// отразили волну
 	if (wave.droids.length <= residualAdjustment(wave.droidsCount) && wave.active == true && wave.budget <= 0 && wave.type !== "FINAL" )
 	{
-		wave.time = gameTime/1000 + (settings.pauseM + INCREM_PAUSEM * numberWave)  * 60 ;
-		setMissionTime((settings.pauseM + INCREM_PAUSEM * numberWave) * 60);
+		wave.time = gameTime/1000 + (settings.pauseM + settings.INCREM_PAUSEM * numberWave) * 60 ;
+		setMissionTime((settings.pauseM + settings.INCREM_PAUSEM * numberWave) * 60);
 		wave.active = false;
 		queue("scheduler", 3*1000);
 		return;
@@ -168,50 +184,47 @@ function scheduler()
 	queue("scheduler", 3*1000);
 }
 
-function residualAdjustment(count)
+function residualAdjustment(unitCount)
 {
-	return Math.ceil(count*RESIDUAL);
+	if (typeof settings.RESIDUAL == "number")
+	{
+		return Math.ceil(unitCount * settings.RESIDUAL);
+	}
+	else
+	{
+		return Infinity; // disable residual adjustment
+	}
 }
 
 function removeVtol()
 {
 	if (enumStruct(AI, REARM_PAD).length <= 0)
 	{
-		const droids = enumDroid(AI, "DROID_WEAPON");
-		droids
-			.filter((d) =>
-			{
-				return d.isVTOL && d.weapons[0].armed <= 1;
-			})
-			.forEach((v) =>
-			{
-				removeObject(v);
-			});
+		enumDroid(AI, "DROID_WEAPON")
+			.filter(d => d.isVTOL && d.weapons[0].armed <= 1)
+			.forEach(v => removeObject(v));
 	}
 }
 
 function landing()
 {
-	if (wave.budget <= 0)
+	if (wave.budget > 0)
 	{
-		return;
+		// делаем высадку
+		wave.LZ = getLZ();
+		pushUnits();
 	}
-	// делаем высадку
-	wave.templates = getTemplates(
-		getTotalTimeS(),
-		wave.type
-	);
-	wave.LZ = getLZ();
-	setDroidsName();
-	pushUnits();
-	let availableStructs = getStructs(getTotalTimeS());
-	pushStructss(availableStructs);
+
+	if (wave.structBudget > 0)
+	{
+		pushStructs();
+	}
 }
 
 function getLZ()
 {
 	const {x, y, x2, y2} = wave.unitZone;
-	let LZ= {
+	let LZ = {
 		x: syncRandom(x2-x)+x,
 		y: syncRandom(y2-y)+y,
 		radius: LZRADIUS,
@@ -226,27 +239,17 @@ function LZtile(LZ)
 	const CLIFF = "X"; //impassable tile
 	const POSS = "."; //landing is possible
 
-	// Returns the structure/feature at x, y
-	// Returns null if empty
-	// NOTE not accurate for big structures/features (e.g. factories)
-	function getTileStructFeat(x, y)
-	{
-		return (
-			enumArea(x, y, x+1, y+1, ALL_PLAYERS, false).filter(o => o.type === STRUCTURE || o.type === FEATURE)?.[0] ?? null
-		);
-	}
-
 	function isPassable(x, y)
 	{
 		if (terrainType(x, y) == TER_CLIFFFACE)
 		{
 			return false;
 		}
-		if (getTileStructFeat(x, y))
+		if (getObject(x, y))
 		{
 			return false;
 		}
-		if (terrainType(x, y) == TER_WATER && settings.waterWave == false)
+		if (settings.waterLanding == false && terrainType(x, y) == TER_WATER)
 		{
 			return false;
 		}
@@ -358,7 +361,7 @@ function newWave()
 		giveResearch();
 		const budget = calcBudget(getTotalTimeS());
 		setPower (budget, AI);
-		wave= {
+		wave = {
 			type: "FINAL",
 			budget: budget.budget * settings.Kfinal,
 			rang: budget.rang,
@@ -370,8 +373,7 @@ function newWave()
 			droidsCount:0
 		};
 		setScrollLimits(x, y, x2, y2);
-		console(_(
-			`Commander, we've spotted a lot of transports.
+		console(_(`Commander, we've spotted a lot of transports.
 Our air defense cannot stop them. Landings are observed throughout the sector.
 THEY ARE IN THE TREES, JOHNNY! FUCKING HOOKES EVERYWHERE!`
 		));
@@ -414,10 +416,10 @@ THEY ARE IN THE TREES, JOHNNY! FUCKING HOOKES EVERYWHERE!`
 
 	giveResearch();
 	const budget = calcBudget(getTotalTimeS());
-	wave= {
+	wave = {
 		type: "NORMAL",
 		budget: budget.budget,
-		structBudget: budget.budget*settings.multiplierForStructures,
+		structBudget: budget.budget * settings.multiplierForStructures,
 		rang: budget.rang,
 		experience: budget.experience,
 		droids: [],
@@ -446,59 +448,39 @@ function calcBudget(timeS)
 	return { budget: budget, rang: rang, experience: Math.round(2 ** rang) };
 }
 
-function getTemplates(timeS, type)
+function getTemplates(timeS)
 {
-	avalibleTemplate = [];
 	const redComponents = getRedComponents(timeS);
 	const redBody = getRedBody(timeS);
-	for (var key in allTemplates)
+
+	let availableTemplates = [];
+	for (const [id, template] of Object.entries(allTemplates))
 	{
-		if (!allTemplates[key].weapons)
-		{
-			continue;
-		}
 		if (
-			makeTemplate(
-				AI,
-				key,
-				allTemplates[key].body,
-				allTemplates[key].propulsion,
-				"",
-				allTemplates[key].weapons
-			) !== null && //у makeTemplate изменен синтаксис в мастере. Не совместимо с 3.4.1
-        allTemplates[key].propulsion != "wheeled01" &&
-        allTemplates[key].weapons[0] != "CommandTurret1" &&
-        allTemplates[key].weapons[0] != "MG1Mk1" &&
-        !redComponents.includes(allTemplates[key].weapons[0]) &&
-        !redBody.includes(allTemplates[key].body)
+			template.weapons &&
+			template.weapons.length > 0 &&
+			!settings.disablePropulsions.includes(template.propulsion) &&
+			!settings.disableWeapons.includes(template.weapons[0]) &&
+			!redComponents.includes(template.weapons[0]) &&
+			!redBody.includes(template.body) &&
+			makeTemplate(AI, id, template.body, template.propulsion, "", ...template.weapons) //у makeTemplate изменен синтаксис в мастере. Не совместимо с 3.4.1
 		)
 		{
-			avalibleTemplate.push(key);
+			availableTemplates.push(id);
 		}
 	}
-	return avalibleTemplate;
-}
-
-
-function setDroidsName()
-{
-	wave.droidsName = [];
-
-	for (let i = 0; i < wave.LZ.tiles.length; i++)
-	{
-		let droidName =
-        wave.templates[syncRandom(wave.templates.length)];
-		wave.droidsName.push(droidName);
-	}
+	return availableTemplates;
 }
 
 function pushUnits()
 {
+	const availableUnits = getTemplates(getTotalTimeS());
 	let tiles = Object.assign([], wave.LZ.tiles);
+
 	hackNetOff();
 	while (wave.budget > 0 && tiles.length > 0)
 	{
-		let droidName = wave.droidsName.shift();
+		let droidName = availableUnits[syncRandom(availableUnits.length)];
 		let pos = tiles.shift();
 		if (allTemplates[droidName].propulsion == "V-Tol")
 		{
@@ -523,7 +505,7 @@ function pushUnits()
 			allTemplates[droidName].propulsion,
 			"",
 			"",
-			allTemplates[droidName].weapons
+			...allTemplates[droidName].weapons
 		);
 		if (settings.enableExperience)
 		{
@@ -535,7 +517,7 @@ function pushUnits()
 			allTemplates[droidName].body,
 			allTemplates[droidName].propulsion,
 			"",
-			allTemplates[droidName].weapons
+			...allTemplates[droidName].weapons
 		).power;
 		wave.droids.push(unit);
 		wave.droidsCount++;
@@ -544,7 +526,7 @@ function pushUnits()
 	if (wave.budget <= 0)
 	{
 		numberWave++;
-		const str = [_("Wave number "), numberWave, ". ", _("Units landed "), wave.droidsCount, "."].join("");
+		const str = [_("Wave number "), numberWave, ". ", _("Units landed: "), wave.droidsCount, "."].join("");
 		debug(str);
 		console(str);
 		setMissionTime(-1);
@@ -554,11 +536,12 @@ function pushUnits()
 
 function getStructs(timeS)
 {
-	let availableStructs = [];
 	const redComponents = getRedComponents(timeS);
+
+	let availableStructs = [];
 	for (const [id, struct] of Object.entries(allStructs))
 	{
-		if (settings.structs && !settings.structs.includes(struct.type))
+		if (!settings.structs.includes(struct.type))
 		{
 			continue;
 		}
@@ -575,45 +558,56 @@ function getStructs(timeS)
 	return availableStructs;
 }
 
-function pushStructss(availableStructs)
+function getStructTiles()
 {
-	if (!wave.structZone) {return;}
 	const {x, y, x2, y2} = wave.structZone;
-	if (availableStructs.length === 0)
+
+	let availableTiles = [];
+	for (let X = x; X < x2; X++)
 	{
-		return;
+		for (let Y = y; Y < y2; Y++)
+		{
+			if (terrainType(X, Y) == TER_CLIFFFACE)
+			{
+				continue;
+			}
+			if (settings.waterStructure == false && terrainType(X, Y) == TER_WATER)
+			{
+				continue;
+			}
+			if (getObject(X, Y))
+			{
+				continue;
+			}
+			availableTiles.push([X, Y]);
+		}
 	}
+	return availableTiles;
+}
 
-	while (wave.structBudget > 0)
+function pushStructs()
+{
+	let availableStructs = getStructs(getTotalTimeS());
+	let availableTiles = getStructTiles();
+
+	shuffle(availableTiles);
+
+	while (wave.structBudget > 0 && availableTiles.length > 0 && availableStructs.length > 0)
 	{
-		const X = (syncRandom(x2-x)+x);
-		const Y = (syncRandom(y2-y)+y);
-
-		if (terrainType(X, Y) == TER_CLIFFFACE || terrainType(X, Y) == TER_WATER)
-		{
-			wave.structBudget--; //защита от бесконечного цикла
-			continue;
-		}
-
-		if (getObject(X, Y))
-		{
-			wave.structBudget--; //защита от бесконечного цикла при нехватке места
-			continue;
-		}
-
-		const key = availableStructs[syncRandom(availableStructs.length)];
-		const struct = allStructs[key];
+		const [x, y] = availableTiles.pop();
+		const i = syncRandom(availableStructs.length);
+		const key = availableStructs[i];
 
 		if (enumStruct(AI, key).length >= getStructureLimit(key, AI))
 		{
-			wave.structBudget--; //защита от бесконечного цикла
+			availableStructs.splice(i, 1); // remove
 			continue;
 		}
 
 		hackNetOff();
-		addStructure(key, AI, X*128, Y*128);
+		addStructure(key, AI, x*128, y*128);
 		hackNetOn();
-		wave.structBudget -= struct.buildPower;
+		wave.structBudget -= allStructs[key].buildPower;
 	}
 }
 

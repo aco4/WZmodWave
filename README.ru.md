@@ -31,14 +31,19 @@
 
 
 ### Тюнинг
-Варзона не поддерживает передачу доп параметров в мод. Так что все настройки находятся в самом моде.
-Файл `multiplay/script/rules/settings.json`:
+По умолчанию мод будет использовать следующие файлы:
+- `multiplay/script/rules/templates.json`
+- `multiplay/script/rules/structure.json`
+- `multiplay/script/rules/research.json`
+- `multiplay/script/rules/settings.json`
 
-```text
+Объяснение для `settings.json`:
+```
 {
 	"protectTimeM": 4, # время в минутах перед первой волной
 	"totalGameTime": 90, # время в минутах через которое юниты дохотят до 16 ранга
 	"expansion": 10, # количество клеток на которое увеличивается карта при десанте
+	"LZRADIUS": 4, # размер каждой высадки
 	"startHeight": 35, # радиус стартовой зоны (высота при выборе одностороннего расширения)
 	"Kpower" : 0.25, # коэффициент при времени влияющий на размер волн
 	"doublePowerM": 20, # коэффициент при квадрате времени влияющий на размер волн
@@ -50,14 +55,21 @@
 	"expansionDirection" : "north"/"all" # направлене расшинения карты только на север или во все стороны 
 	"RESIDUAL": 0.03, # волна считается побежденной, когда остается только 3% юнитов
 	"INCREM_PAUSEM": 0.1, # каждая волна, увеличение задержки между волнами в минутах
-	"waterWave": false, # волны могут высаживаться в воде
+	"waterLanding": false, # юниты могут высаживаться на воду
+	"waterStructure": false, # сооружения могут появляться на воде
 	"playersManipulation": true, # изменения в базе игрока и ограничения в начале игры
 	"structs": ["DEFENSE", "GENERIC", "REARM PAD"], # Допустимые типы структур
+	"disablePropulsions": ["wheeled01"], # Отключить появление этих типов привода
+	"disableWeapons": ["CommandTurret1", "MG1Mk1"], # Отключите появление этого оружия
 	"enableExperience": true # Звания юнитов. Вкл./Выкл
 }
 ```
 
-
+Если присутствуют файлы, специфичные для карты, мод будет использовать их. Например, если карта называется «Calamity», то мод будет использовать:
+- `multiplay/script/rules/Calamity.templates.json`
+- `multiplay/script/rules/Calamity.structure.json`
+- `multiplay/script/rules/Calamity.research.json`
+- `multiplay/script/rules/Calamity.settings.json`
 
 ## Хитрости по прохождению
 
