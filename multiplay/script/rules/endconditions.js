@@ -239,7 +239,7 @@ function checkEndConditions()
 		team.setState(STATE_loser);
 	});
 	const contenderTeams = teams.filter((team) => (team.isContender()));
-	if ((isMapFullyOpen() && wave.active === false && countDroid(DROID_ANY, AI) === 0) || contenderTeams.length === 0) // custum end game
+	if ((currentWave?.isFinal && currentWave.isDoneLanding && countDroid(DROID_ANY, Wave.AI) === 0) || contenderTeams.length === 0) // custom end game
 	{
 		contenderTeams.forEach((team) => {
 			team.setState(STATE_winner);

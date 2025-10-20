@@ -1,0 +1,32 @@
+{
+	"tracked01": 130,
+	"CyborgLegs": 90,
+	"hover01": 80,
+	"V-Tol": 40,
+
+	"Rocket-VTOL-Sunburst": 0,
+
+	"AAGun2Mk1": 30,
+	"QuadMg1AAGun": 35,
+	"Rocket-Sunburst": 40,
+	"AAGun2Mk1Quad": 45,
+	"QuadRotAAGun": 50,
+	"Missile-LtSAM": 55,
+	"AAGunLaser": 60,
+	"Missile-HvySAM": 65,
+
+	"Cyb-Wpn-Grenade": 0,
+
+	"SpyTurret01": 50,
+	"MortarEMP": 50,
+	"EMP-Cannon": 50,
+
+	"RailGun1Mk1": 300,
+	"RailGun2Mk1": 300,
+	"ParticleGun": 450,
+	"RailGun3Mk1": 650,
+
+	"TransporterBody": 0,
+	"SuperTransportBody": 0,
+	"CommandTurret1": 0
+}

@@ -1,0 +1,23 @@
+{
+	"protectTimeM": 4.5,
+	"totalGameTime": 90,
+	"expansionDirection": "north",
+	"expansionAmount": 7,
+	"LZRADIUS": 3,
+	"startHeight": 36,
+	"Kpower": 0.12,
+	"doublePowerM": 2.8,
+	"multiplierForStructures": 0.1,
+	"pauseM": 2,
+	"inWavePauseS": 3,
+	"timeHandicapM": 2,
+	"Kfinal": 2,
+	"RESIDUAL": null,
+	"INCREM_PAUSEM": 0.0,
+	"waterLanding": true,
+	"waterStructure": false,
+	"playersManipulation": true,
+	"structs": [],
+	"disableComponents": ["CommandTurret1", "TransporterBody", "SuperTransportBody", "Rocket-VTOL-Sunburst"],
+	"enableExperience": false
+}

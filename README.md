@@ -27,7 +27,6 @@ In order to win, you have to survive untill the whole map is revealed.
 
 - Pack catalog `multiplay` into a zip archive and put them in `autoload`.
 - Put the maps `10c-Stone-Jungle-v3w.wz` in the catalog `maps` 
-Read more https://github.com/Warzone2100/warzone2100/blob/master/README.md#configuration
 - Add one `waveAI` to the last slot. AI difficulty level will affect the number of enemy units.
 - Only the host needs to enable the mod.
 
@@ -44,51 +43,96 @@ When choosing another map:
 - must not contain large, sharp cliffs
 - in the center (or in the south, with one-side expansion) must be an area suitable for your own base building. Spawn points don't depend on location of your HQ.
 
-### Settings
-By default, the mod will use the following files:
-- `multiplay/script/rules/templates.json`
-- `multiplay/script/rules/structure.json`
-- `multiplay/script/rules/research.json`
+### Configuration
+By default, the mod will use:
 - `multiplay/script/rules/settings.json`
+- `multiplay/script/rules/research.json`
+- `multiplay/script/rules/structure.json`
+- `multiplay/script/rules/startingComponents.json`
+- `multiplay/script/rules/componentWeights.json`
+- `multiplay/script/rules/redundantComponents.json`
+or, if present:
+- `multiplay/script/rules/<MapName>/settings.json`
+- `multiplay/script/rules/<MapName>/research.json`
+- `multiplay/script/rules/<MapName>/structure.json`
+- `multiplay/script/rules/<MapName>/startingComponents.json`
+- `multiplay/script/rules/<MapName>/componentWeights.json`
+- `multiplay/script/rules/<MapName>/redundantComponents.json`
 
 Explanation for `settings.json`:
 ```
 {
-	"protectTimeM": 4, # minutes until first wave
-	"totalGameTime": 90, # time in minutes until enemies reach the rank 16
-	"expansion": 10, # tile growth after each wave
-	"LZRADIUS": 4, # size of each landing
-	"startHeight": 35, # initial map height when using one-side expansion mode, or the initial radius otherwise 
-	"Kpower" : 0.25, # linear wave growth factor, depends on time
-	"doublePowerM": 20, # quadratic wave growth factor, depends on time
-	"multiplierForStructures": 0.7, # control the amount of structures
-	"pauseM": 2, # delay in minutes between waves
-	"inWavePauseS": 11 # delay between landings within the same wave
-	"timeHandicapM": 0.5, # slight lag in research for AI
-	"Kfinal": 2, # final wave size multiplier
-	"expansionDirection": "north"/"all", # expansion direction
-	"RESIDUAL": 0.03, # a wave is considered defeated when only 3% of units remain
+	"totalGameTime": 90,  # time in minutes until enemies reach the rank 16
+	"protectTimeM": 3,    # minutes until the first wave
+	"pauseM": 0.8,        # delay in minutes between waves
+	"inWavePauseS": 7,    # delay between landings within the same wave
 	"INCREM_PAUSEM": 0.1, # each wave, increase the delay between waves in minutes
-	"waterLanding": false, # units can land in water
-	"waterStructure": false, # structures can appear on water
-	"playersManipulation": true, # change the player's base and limits at start
-	"structs": ["DEFENSE", "GENERIC", "REARM PAD"], # allowed structure types
-	"disablePropulsions": ["wheeled01"], # disable these propulsion types from spawning
-	"disableWeapons": ["CommandTurret1", "MG1Mk1"], # disable these weapons from spawning
-	"enableExperience": true # unit ranks. on/off
+	"timeHandicapM": 2,   # slight lag in research for AI
+	"RESIDUAL": 0.03,     # a wave is considered defeated when only 3% of units remain
+                                     
+	"startHeight": 50,             # initial map height/radius
+	"expansionDirection": "all",   # expansion direction (north/east/south/west/all)
+	"expansionAmount": 24,         # tile growth after each wave
+	"transporterUnitCount": 45,    # number of units that land from each transporter
+	"transporterExperience": 9999, # give rank to the transporters (harder to kill)
+                                  
+	"Kpower": 0.15,        # linear wave growth factor, depends on time
+	"doublePowerM": 120,   # quadratic wave growth factor, depends on time
+	"startPowerC": 0,      # constant extra power
+	"Kfinal": 3,           # final wave power multiplier
+	"structPower": {       # allowed structure types
+		"DEFENSE": 0.01,   # amount of DEFENSE structures
+		"REARM PAD": 0.001 # amount of REARM PAD structures
+	},                             
+                          
+	"waterLanding": false,            # units can land in water
+	"waterStructure": false,          # structures can appear on water
+	"enableWaveExperience": true,     # rank of enemy units increase over time
+	"waveExperienceModifier": null,   # how fast enemy units gain experience (null = default)
+	"playerExperienceModifier": null, # how fast your units gain experience (null = default)
+	"playersManipulation": true       # change the player's base and limits
 }
 ```
-
-If map-specific files are present, the mod will use them instead. For example, if the map is named "Calamity", then the mod will use:
-- `multiplay/script/rules/Calamity.templates.json`
-- `multiplay/script/rules/Calamity.structure.json`
-- `multiplay/script/rules/Calamity.research.json`
-- `multiplay/script/rules/Calamity.settings.json`
-
+Explanation for `componentWeights.json`:
+```
+{
+	"Rocket-Sunburst": 40,     # 60% less
+	"EMP-Cannon": 50,          # 50% less
+	"CyborgLegs": 100,         # default
+	"V-Tol": 0,                # disable
+	"Rocket-VTOL-Sunburst": 0, # disable
+	"RailGun1Mk1": 300,        # 300% more
+	"RailGun2Mk1": 300,        # 350% more
+	"TransporterBody": 0,      # disable
+	"SuperTransportBody": 0,   # disable
+	"CommandTurret1": 0        # disable
+}
+```
+Explanation for `redundantComponents.json`:
+```
+{
+	"R-Vehicle-Prop-Halftracks": [
+		"wheeled01"                # Stop using wheels after Half-Track is researched
+	],
+	"R-Wpn-Howitzer-Incendiary": [
+		"Mortar-Incendiary"        # Stop using Incendiary Mortar after research Incendiary Howitzer
+	],
+	"R-Vehicle-Body11": [
+		"Body1REC"                 # Stop using Viper after Python is researched
+	]
+}
+```
+Explanation for `startingComponents.json`:
+```
+[
+	"B2JeepBody",
+	"BusBody",    # Make components available to the Wave AI at start
+	"BaBaMG"     
+]
+```
 
 ## Tricks & hints
-- Enemies don't make any difference between a structure or a droid. You could use 
-cheap structures to distract them, and get some time
+- Enemies don't make any difference between a structure or a droid. You could use cheap structures to distract them, and get some time
 - Enemy's droid templates do vary with time, but do not depend on your templates. Try to find more effective propulsion/body combinations.
 - Enemy doesn't have Sensors units, but has artillery and sensor towers.
 - In about an hour of game, number of enemies will start growing huge. You should try to win before that time mark.

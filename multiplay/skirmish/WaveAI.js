@@ -359,7 +359,8 @@ function groupsManagement()
 	});
 	let units = [].concat(
 		enumDroid(me, DROID_CYBORG),
-		enumDroid(me, DROID_WEAPON)
+		enumDroid(me, DROID_WEAPON),
+		enumDroid(me, DROID_PERSON)
 	);
 	units = units.filter(function (obj)
 	{

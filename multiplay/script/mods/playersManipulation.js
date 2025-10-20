@@ -1,13 +1,10 @@
-include("multiplay/script/lib.js");
-const defoultUnitsLimits =
-{
+const defaultUnitsLimits = {
 	[DROID_ANY]: 150,
 	[DROID_COMMAND]: 10,
 	[DROID_CONSTRUCT]: 15
 };
 
-const defoultsStructLimit =
-{
+const defaultsStructLimit = {
 	"A0LightFactory": 5,
 	"A0PowerGenerator": 10,
 	"A0ResearchFacility": 5,
@@ -20,9 +17,10 @@ const defoultsStructLimit =
 	"A0VtolPad": 50
 };
 
-const defoultSTRUCTS = ["A0PowerGenerator","A0ResearchFacility","A0LightFactory"];
-const defoultNumConstruct = 4;
-const defoultNumOil = 40;
+const defaultSTRUCTS = ["A0PowerGenerator","A0ResearchFacility","A0LightFactory"];
+const defaultNumConstruct = 4;
+const defaultNumOil = 40;
+const BORDER = 4;
 
 namespace("wa_players_");
 
@@ -34,7 +32,7 @@ function wa_players_eventGameInit()
 	}
 	if (settings.playersManipulation === "AI")
 	{
-		cleanUnitsAndStruct(AI);
+		cleanUnitsAndStruct(Wave.AI);
 		return;
 	}
 	addSpoter();
@@ -74,7 +72,7 @@ function pushUnitsAndStruct()
 	let players = [];
 	for (var playnum = 0; playnum < maxPlayers; playnum++)
 	{
-		if (playnum == AI){continue;}
+		if (playnum == Wave.AI){continue;}
 		if (isSpectator(playnum))
 		{
 			continue; // skip slots that start as spectators
@@ -98,8 +96,8 @@ function pushUnitsAndStruct()
 		"propulsion": "wheeled01"
 	};
 	const numOil = getNumOil();
-	const K=(numOil)/players.length/defoultNumOil;
-	const NumConstruct = Math.ceil(K*defoultNumConstruct);
+	const K=(numOil)/players.length/defaultNumOil;
+	const NumConstruct = Math.ceil(K*defaultNumConstruct);
 	const NumStruct =  Math.ceil(K*5);
 
 	const R=(scrollLimits.x2-scrollLimits.x)/3;
@@ -129,7 +127,7 @@ function pushUnitsAndStruct()
 		}
 		for (let i = 0; i < NumStruct; i++)
 		{
-			defoultSTRUCTS.forEach((s) =>
+			defaultSTRUCTS.forEach((s) =>
 			{
 				const tile = pickStructLocation(constructor, s, HQ.x, HQ.y);
 				addStructure(s, p, tile.x*128, tile.y*128);
@@ -150,7 +148,7 @@ function recalcLimits()
 	let players = [];
 	for (var playnum = 0; playnum < maxPlayers; playnum++)
 	{
-		if (playnum == AI){continue;}
+		if (playnum == Wave.AI){continue;}
 		if (isSpectator(playnum))
 		{
 			continue; // skip slots that start as spectators
@@ -163,18 +161,18 @@ function recalcLimits()
 		players.push(playnum);
 	}
 	const numOil = getNumOil();
-	let K = (numOil+20)*1.1/players.length/defoultNumOil;
+	let K = (numOil+20)*1.1/players.length/defaultNumOil;
 	if (K < 0.5) {K =0.5;}
 	players.forEach((p, index) =>
 	{
 
-		for (var droidType in defoultUnitsLimits)
+		for (var droidType in defaultUnitsLimits)
 		{
-			setDroidLimit(p, Math.ceil(defoultUnitsLimits[droidType]*K), droidType);
+			setDroidLimit(p, Math.ceil(defaultUnitsLimits[droidType]*K), droidType);
 		}
-		for (var struct in defoultsStructLimit)
+		for (var struct in defaultsStructLimit)
 		{
-			setStructureLimits(struct, Math.ceil(defoultsStructLimit[struct]*K), p);
+			setStructureLimits(struct, Math.ceil(defaultsStructLimit[struct]*K), p);
 		}
 	});
 }

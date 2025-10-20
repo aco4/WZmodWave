@@ -1,24 +1,31 @@
 {
-	"protectTimeM": 3,
 	"totalGameTime": 90,
-	"expansion": 24,
-	"LZRADIUS": 4,
-	"startHeight": 50,
-	"Kpower": 0.15,
-	"doublePowerM": 120,
-	"multiplierForStructures": 0.7,
+	"protectTimeM": 3,
 	"pauseM": 0.8,
 	"inWavePauseS": 7,
-	"timeHandicapM": 2,
-	"Kfinal": 4,
-	"expansionDirection" : "all",
-	"RESIDUAL": 0.03,
 	"INCREM_PAUSEM": 0.1,
+	"timeHandicapM": 2,
+	"RESIDUAL": 0.03,
+
+	"startHeight": 50,
+	"expansionDirection": "all",
+	"expansionAmount": 24,
+	"transporterUnitCount": 45,
+	"transporterExperience": 9999,
+
+	"Kpower": 0.15,
+	"doublePowerM": 120,
+	"startPowerC": 0,
+	"Kfinal": 3,
+	"structPower": {
+		"DEFENSE": 0.01,
+		"REARM PAD": 0.001
+	},
+
 	"waterLanding": false,
 	"waterStructure": false,
-	"playersManipulation": true,
-	"structs": ["DEFENSE", "GENERIC", "REARM PAD"],
-	"disablePropulsions": ["wheeled01"],
-	"disableWeapons": ["CommandTurret1", "MG1Mk1"],
-	"enableExperience": true
+	"enableWaveExperience": true,
+	"waveExperienceModifier": null,
+	"playerExperienceModifier": null,
+	"playersManipulation": true
 }

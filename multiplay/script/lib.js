@@ -1,8 +1,3 @@
-if ( typeof timeBaseTech == "undefined")
-{
-	include("multiplay/script/rules/variables.js");
-}
-
 function dist(a,b)
 {
 	if (!(a.x && b.x && a.y && b.y)) {return Infinity;}
@@ -119,4 +114,79 @@ function shuffle(array)
 		const j = syncRandom(i);
 		[array[i], array[j]] = [array[j], array[i]];
 	}
+}
+
+// Snap (x, y) to the nearest border
+// Optional margin offset (e.g. 2 tiles inwards, -3 tiles outward)
+function onBorder(x, y, margin = 0)
+{
+	const { x: x1, y: y1, x2, y2 } = getScrollLimits();
+
+	// Distances to each border
+	const distLeft   = Math.abs(x - x1);
+	const distRight  = Math.abs(x2 - x);
+	const distTop    = Math.abs(y - y1);
+	const distBottom = Math.abs(y2 - y);
+
+	const minDist = Math.min(distLeft, distRight, distTop, distBottom);
+
+	if (minDist === distLeft)
+	{
+		x = x1 + margin;
+	}
+	else if (minDist === distRight)
+	{
+		x = x2 - margin;
+	}
+	else if (minDist === distTop)
+	{
+		y = y1 + margin;
+	}
+	else
+	{ // bottom
+		y = y2 - margin;
+	}
+
+	return {
+		x: Math.max(0, Math.min(mapWidth - 1, x)),
+		y: Math.max(0, Math.min(mapHeight - 1, y)),
+	};
+}
+
+function BFS(sx, sy, max_count, shape, can_visit, visit, stop)
+{
+	const Cardinals = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+	const Ordinals = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+	const seen = new Set();
+	const queue = [[sx, sy]];
+	function addToQueue(x, y)
+	{
+		if (!seen.has(`${x},${y}`)) {
+			seen.add(`${x},${y}`);
+			queue.push([x, y]);
+		}
+	}
+
+	let visit_count = 0;
+	while (queue.length > 0 && visit_count < max_count && !stop())
+	{
+		const [x, y] = queue.shift();
+		if (can_visit(x, y))
+		{
+			visit(x, y);
+			visit_count++;
+			for (const [dx, dy] of Cardinals)
+			{
+				addToQueue(x+dx, y+dy);
+			}
+			for (const [dx, dy] of Ordinals)
+			{
+				if (syncRandom(100) < shape)
+				{
+					addToQueue(x+dx, y+dy);
+				}
+			}
+		}
+	}
+	return visit_count;
 }

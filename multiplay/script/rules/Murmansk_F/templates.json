@@ -1,0 +1,4535 @@
+{
+	"HeavyMachinegun-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "HeavyMachinegun-Viper-Hover",
+		"name": "Heavy Machinegun Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "HeavyMachinegun-Cobra-Hover",
+		"name": "Heavy Machinegun Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "HeavyMachinegun-Python-Hover",
+		"name": "Heavy Machinegun Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "HeavyMachinegun-Bug-Hover",
+		"name": "Heavy Machinegun Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "HeavyMachinegun-Scorpion-Hover",
+		"name": "Heavy Machinegun Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "HeavyMachinegun-Mantis-Hover",
+		"name": "Heavy Machinegun Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "HeavyMachinegun-Leopard-Hover",
+		"name": "Heavy Machinegun Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "HeavyMachinegun-Panther-Hover",
+		"name": "Heavy Machinegun Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "HeavyMachinegun-Tiger-Hover",
+		"name": "Heavy Machinegun Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "HeavyMachinegun-Retaliation-Hover",
+		"name": "Heavy Machinegun Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "HeavyMachinegun-Retribution-Hover",
+		"name": "Heavy Machinegun Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "HeavyMachinegun-Vengeance-Hover",
+		"name": "Heavy Machinegun Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"HeavyMachinegun-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "HeavyMachinegun-Wyvern-Hover",
+		"name": "Heavy Machinegun Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"MediumCannon-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "MediumCannon-Viper-Hover",
+		"name": "Medium Cannon Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "MediumCannon-Cobra-Hover",
+		"name": "Medium Cannon Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "MediumCannon-Python-Hover",
+		"name": "Medium Cannon Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "MediumCannon-Bug-Hover",
+		"name": "Medium Cannon Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "MediumCannon-Scorpion-Hover",
+		"name": "Medium Cannon Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "MediumCannon-Mantis-Hover",
+		"name": "Medium Cannon Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "MediumCannon-Leopard-Hover",
+		"name": "Medium Cannon Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "MediumCannon-Panther-Hover",
+		"name": "Medium Cannon Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "MediumCannon-Tiger-Hover",
+		"name": "Medium Cannon Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "MediumCannon-Retaliation-Hover",
+		"name": "Medium Cannon Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "MediumCannon-Retribution-Hover",
+		"name": "Medium Cannon Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "MediumCannon-Vengeance-Hover",
+		"name": "Medium Cannon Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"MediumCannon-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "MediumCannon-Wyvern-Hover",
+		"name": "Medium Cannon Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"Mini-RocketArray-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Mini-RocketArray-Viper-Hover",
+		"name": "Mini-Rocket Array Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Mini-RocketArray-Cobra-Hover",
+		"name": "Mini-Rocket Array Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Mini-RocketArray-Python-Hover",
+		"name": "Mini-Rocket Array Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Mini-RocketArray-Bug-Hover",
+		"name": "Mini-Rocket Array Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Mini-RocketArray-Scorpion-Hover",
+		"name": "Mini-Rocket Array Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Mini-RocketArray-Mantis-Hover",
+		"name": "Mini-Rocket Array Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Mini-RocketArray-Leopard-Hover",
+		"name": "Mini-Rocket Array Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Mini-RocketArray-Panther-Hover",
+		"name": "Mini-Rocket Array Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Mini-RocketArray-Tiger-Hover",
+		"name": "Mini-Rocket Array Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Mini-RocketArray-Retaliation-Hover",
+		"name": "Mini-Rocket Array Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Mini-RocketArray-Retribution-Hover",
+		"name": "Mini-Rocket Array Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Mini-RocketArray-Vengeance-Hover",
+		"name": "Mini-Rocket Array Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Mini-RocketArray-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Mini-RocketArray-Wyvern-Hover",
+		"name": "Mini-Rocket Array Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"Lancer-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Lancer-Viper-Hover",
+		"name": "Lancer Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Lancer-Cobra-Hover",
+		"name": "Lancer Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Lancer-Python-Hover",
+		"name": "Lancer Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Lancer-Bug-Hover",
+		"name": "Lancer Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Lancer-Scorpion-Hover",
+		"name": "Lancer Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Lancer-Mantis-Hover",
+		"name": "Lancer Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Lancer-Leopard-Hover",
+		"name": "Lancer Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Lancer-Panther-Hover",
+		"name": "Lancer Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Lancer-Tiger-Hover",
+		"name": "Lancer Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Lancer-Retaliation-Hover",
+		"name": "Lancer Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Lancer-Retribution-Hover",
+		"name": "Lancer Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Lancer-Vengeance-Hover",
+		"name": "Lancer Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"Lancer-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Lancer-Wyvern-Hover",
+		"name": "Lancer Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"HyperVelocityCannon-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "HyperVelocityCannon-Viper-Hover",
+		"name": "Hyper Velocity Cannon Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "HyperVelocityCannon-Cobra-Hover",
+		"name": "Hyper Velocity Cannon Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "HyperVelocityCannon-Python-Hover",
+		"name": "Hyper Velocity Cannon Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "HyperVelocityCannon-Bug-Hover",
+		"name": "Hyper Velocity Cannon Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "HyperVelocityCannon-Scorpion-Hover",
+		"name": "Hyper Velocity Cannon Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "HyperVelocityCannon-Mantis-Hover",
+		"name": "Hyper Velocity Cannon Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "HyperVelocityCannon-Leopard-Hover",
+		"name": "Hyper Velocity Cannon Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "HyperVelocityCannon-Panther-Hover",
+		"name": "Hyper Velocity Cannon Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "HyperVelocityCannon-Tiger-Hover",
+		"name": "Hyper Velocity Cannon Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "HyperVelocityCannon-Retaliation-Hover",
+		"name": "Hyper Velocity Cannon Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "HyperVelocityCannon-Retribution-Hover",
+		"name": "Hyper Velocity Cannon Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "HyperVelocityCannon-Vengeance-Hover",
+		"name": "Hyper Velocity Cannon Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"HyperVelocityCannon-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "HyperVelocityCannon-Wyvern-Hover",
+		"name": "Hyper Velocity Cannon Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon4AUTOMk1"
+		]
+	},
+	"Pepperpot-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Pepperpot-Viper-Hover",
+		"name": "Pepperpot Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Pepperpot-Cobra-Hover",
+		"name": "Pepperpot Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Pepperpot-Python-Hover",
+		"name": "Pepperpot Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Pepperpot-Bug-Hover",
+		"name": "Pepperpot Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Pepperpot-Scorpion-Hover",
+		"name": "Pepperpot Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Pepperpot-Mantis-Hover",
+		"name": "Pepperpot Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Pepperpot-Leopard-Hover",
+		"name": "Pepperpot Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Pepperpot-Panther-Hover",
+		"name": "Pepperpot Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Pepperpot-Tiger-Hover",
+		"name": "Pepperpot Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Pepperpot-Retaliation-Hover",
+		"name": "Pepperpot Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Pepperpot-Retribution-Hover",
+		"name": "Pepperpot Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Pepperpot-Vengeance-Hover",
+		"name": "Pepperpot Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Pepperpot-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Pepperpot-Wyvern-Hover",
+		"name": "Pepperpot Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"Bombard-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Bombard-Viper-Hover",
+		"name": "Bombard Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Bombard-Cobra-Hover",
+		"name": "Bombard Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Bombard-Python-Hover",
+		"name": "Bombard Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Bombard-Bug-Hover",
+		"name": "Bombard Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Bombard-Scorpion-Hover",
+		"name": "Bombard Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Bombard-Mantis-Hover",
+		"name": "Bombard Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Bombard-Leopard-Hover",
+		"name": "Bombard Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Bombard-Panther-Hover",
+		"name": "Bombard Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Bombard-Tiger-Hover",
+		"name": "Bombard Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Bombard-Retaliation-Hover",
+		"name": "Bombard Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Bombard-Retribution-Hover",
+		"name": "Bombard Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Bombard-Vengeance-Hover",
+		"name": "Bombard Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"Bombard-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Bombard-Wyvern-Hover",
+		"name": "Bombard Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"BunkerBuster-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "BunkerBuster-Viper-Hover",
+		"name": "Bunker Buster Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "BunkerBuster-Cobra-Hover",
+		"name": "Bunker Buster Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "BunkerBuster-Python-Hover",
+		"name": "Bunker Buster Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "BunkerBuster-Bug-Hover",
+		"name": "Bunker Buster Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "BunkerBuster-Scorpion-Hover",
+		"name": "Bunker Buster Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "BunkerBuster-Mantis-Hover",
+		"name": "Bunker Buster Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "BunkerBuster-Leopard-Hover",
+		"name": "Bunker Buster Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "BunkerBuster-Panther-Hover",
+		"name": "Bunker Buster Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "BunkerBuster-Tiger-Hover",
+		"name": "Bunker Buster Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "BunkerBuster-Retaliation-Hover",
+		"name": "Bunker Buster Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "BunkerBuster-Retribution-Hover",
+		"name": "Bunker Buster Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "BunkerBuster-Vengeance-Hover",
+		"name": "Bunker Buster Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"BunkerBuster-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "BunkerBuster-Wyvern-Hover",
+		"name": "Bunker Buster Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"AssaultGun-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "AssaultGun-Viper-Hover",
+		"name": "Assault Gun Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "AssaultGun-Cobra-Hover",
+		"name": "Assault Gun Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "AssaultGun-Python-Hover",
+		"name": "Assault Gun Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "AssaultGun-Bug-Hover",
+		"name": "Assault Gun Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "AssaultGun-Scorpion-Hover",
+		"name": "Assault Gun Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "AssaultGun-Mantis-Hover",
+		"name": "Assault Gun Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "AssaultGun-Leopard-Hover",
+		"name": "Assault Gun Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "AssaultGun-Panther-Hover",
+		"name": "Assault Gun Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "AssaultGun-Tiger-Hover",
+		"name": "Assault Gun Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "AssaultGun-Retaliation-Hover",
+		"name": "Assault Gun Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "AssaultGun-Retribution-Hover",
+		"name": "Assault Gun Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "AssaultGun-Vengeance-Hover",
+		"name": "Assault Gun Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"AssaultGun-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "AssaultGun-Wyvern-Hover",
+		"name": "Assault Gun Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"Inferno-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Inferno-Viper-Hover",
+		"name": "Inferno Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Inferno-Cobra-Hover",
+		"name": "Inferno Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Inferno-Python-Hover",
+		"name": "Inferno Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Inferno-Bug-Hover",
+		"name": "Inferno Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Inferno-Scorpion-Hover",
+		"name": "Inferno Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Inferno-Mantis-Hover",
+		"name": "Inferno Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Inferno-Leopard-Hover",
+		"name": "Inferno Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Inferno-Panther-Hover",
+		"name": "Inferno Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Inferno-Tiger-Hover",
+		"name": "Inferno Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Inferno-Retaliation-Hover",
+		"name": "Inferno Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Inferno-Retribution-Hover",
+		"name": "Inferno Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Inferno-Vengeance-Hover",
+		"name": "Inferno Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"Inferno-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Inferno-Wyvern-Hover",
+		"name": "Inferno Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Flame2"
+		]
+	},
+	"AssaultCannon-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "AssaultCannon-Viper-Hover",
+		"name": "Assault Cannon Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "AssaultCannon-Cobra-Hover",
+		"name": "Assault Cannon Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "AssaultCannon-Python-Hover",
+		"name": "Assault Cannon Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "AssaultCannon-Bug-Hover",
+		"name": "Assault Cannon Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "AssaultCannon-Scorpion-Hover",
+		"name": "Assault Cannon Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "AssaultCannon-Mantis-Hover",
+		"name": "Assault Cannon Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "AssaultCannon-Leopard-Hover",
+		"name": "Assault Cannon Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "AssaultCannon-Panther-Hover",
+		"name": "Assault Cannon Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "AssaultCannon-Tiger-Hover",
+		"name": "Assault Cannon Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "AssaultCannon-Retaliation-Hover",
+		"name": "Assault Cannon Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "AssaultCannon-Retribution-Hover",
+		"name": "Assault Cannon Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "AssaultCannon-Vengeance-Hover",
+		"name": "Assault Cannon Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"AssaultCannon-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "AssaultCannon-Wyvern-Hover",
+		"name": "Assault Cannon Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon5VulcanMk1"
+		]
+	},
+	"IncendiaryMortar-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "IncendiaryMortar-Viper-Hover",
+		"name": "Incendiary Mortar Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "IncendiaryMortar-Cobra-Hover",
+		"name": "Incendiary Mortar Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "IncendiaryMortar-Python-Hover",
+		"name": "Incendiary Mortar Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "IncendiaryMortar-Bug-Hover",
+		"name": "Incendiary Mortar Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "IncendiaryMortar-Scorpion-Hover",
+		"name": "Incendiary Mortar Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "IncendiaryMortar-Mantis-Hover",
+		"name": "Incendiary Mortar Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "IncendiaryMortar-Leopard-Hover",
+		"name": "Incendiary Mortar Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "IncendiaryMortar-Panther-Hover",
+		"name": "Incendiary Mortar Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "IncendiaryMortar-Tiger-Hover",
+		"name": "Incendiary Mortar Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "IncendiaryMortar-Retaliation-Hover",
+		"name": "Incendiary Mortar Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "IncendiaryMortar-Retribution-Hover",
+		"name": "Incendiary Mortar Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "IncendiaryMortar-Vengeance-Hover",
+		"name": "Incendiary Mortar Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"IncendiaryMortar-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "IncendiaryMortar-Wyvern-Hover",
+		"name": "Incendiary Mortar Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Mortar-Incendiary"
+		]
+	},
+	"HeavyRocketArray-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "HeavyRocketArray-Viper-Hover",
+		"name": "Heavy Rocket Array Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "HeavyRocketArray-Cobra-Hover",
+		"name": "Heavy Rocket Array Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "HeavyRocketArray-Python-Hover",
+		"name": "Heavy Rocket Array Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "HeavyRocketArray-Bug-Hover",
+		"name": "Heavy Rocket Array Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "HeavyRocketArray-Scorpion-Hover",
+		"name": "Heavy Rocket Array Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "HeavyRocketArray-Mantis-Hover",
+		"name": "Heavy Rocket Array Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "HeavyRocketArray-Leopard-Hover",
+		"name": "Heavy Rocket Array Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "HeavyRocketArray-Panther-Hover",
+		"name": "Heavy Rocket Array Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "HeavyRocketArray-Tiger-Hover",
+		"name": "Heavy Rocket Array Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "HeavyRocketArray-Retaliation-Hover",
+		"name": "Heavy Rocket Array Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "HeavyRocketArray-Retribution-Hover",
+		"name": "Heavy Rocket Array Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "HeavyRocketArray-Vengeance-Hover",
+		"name": "Heavy Rocket Array Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyRocketArray-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "HeavyRocketArray-Wyvern-Hover",
+		"name": "Heavy Rocket Array Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL-Hvy"
+		]
+	},
+	"HeavyCannon-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "HeavyCannon-Viper-Hover",
+		"name": "Heavy Cannon Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "HeavyCannon-Cobra-Hover",
+		"name": "Heavy Cannon Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "HeavyCannon-Python-Hover",
+		"name": "Heavy Cannon Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "HeavyCannon-Bug-Hover",
+		"name": "Heavy Cannon Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "HeavyCannon-Scorpion-Hover",
+		"name": "Heavy Cannon Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "HeavyCannon-Mantis-Hover",
+		"name": "Heavy Cannon Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "HeavyCannon-Leopard-Hover",
+		"name": "Heavy Cannon Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "HeavyCannon-Panther-Hover",
+		"name": "Heavy Cannon Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "HeavyCannon-Tiger-Hover",
+		"name": "Heavy Cannon Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "HeavyCannon-Retaliation-Hover",
+		"name": "Heavy Cannon Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "HeavyCannon-Retribution-Hover",
+		"name": "Heavy Cannon Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "HeavyCannon-Vengeance-Hover",
+		"name": "Heavy Cannon Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"HeavyCannon-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "HeavyCannon-Wyvern-Hover",
+		"name": "Heavy Cannon Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon375mmMk1"
+		]
+	},
+	"TankKiller-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "TankKiller-Viper-Hover",
+		"name": "Tank Killer Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "TankKiller-Cobra-Hover",
+		"name": "Tank Killer Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "TankKiller-Python-Hover",
+		"name": "Tank Killer Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "TankKiller-Bug-Hover",
+		"name": "Tank Killer Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "TankKiller-Scorpion-Hover",
+		"name": "Tank Killer Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "TankKiller-Mantis-Hover",
+		"name": "Tank Killer Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "TankKiller-Leopard-Hover",
+		"name": "Tank Killer Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "TankKiller-Panther-Hover",
+		"name": "Tank Killer Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "TankKiller-Tiger-Hover",
+		"name": "Tank Killer Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "TankKiller-Retaliation-Hover",
+		"name": "Tank Killer Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "TankKiller-Retribution-Hover",
+		"name": "Tank Killer Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "TankKiller-Vengeance-Hover",
+		"name": "Tank Killer Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TankKiller-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "TankKiller-Wyvern-Hover",
+		"name": "Tank Killer Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-HvyA-T"
+		]
+	},
+	"TwinAssaultCannon-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "TwinAssaultCannon-Viper-Hover",
+		"name": "Twin Assault Cannon Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "TwinAssaultCannon-Cobra-Hover",
+		"name": "Twin Assault Cannon Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "TwinAssaultCannon-Python-Hover",
+		"name": "Twin Assault Cannon Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "TwinAssaultCannon-Bug-Hover",
+		"name": "Twin Assault Cannon Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "TwinAssaultCannon-Scorpion-Hover",
+		"name": "Twin Assault Cannon Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "TwinAssaultCannon-Mantis-Hover",
+		"name": "Twin Assault Cannon Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "TwinAssaultCannon-Leopard-Hover",
+		"name": "Twin Assault Cannon Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "TwinAssaultCannon-Panther-Hover",
+		"name": "Twin Assault Cannon Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "TwinAssaultCannon-Tiger-Hover",
+		"name": "Twin Assault Cannon Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "TwinAssaultCannon-Retaliation-Hover",
+		"name": "Twin Assault Cannon Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "TwinAssaultCannon-Retribution-Hover",
+		"name": "Twin Assault Cannon Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "TwinAssaultCannon-Vengeance-Hover",
+		"name": "Twin Assault Cannon Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultCannon-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "TwinAssaultCannon-Wyvern-Hover",
+		"name": "Twin Assault Cannon Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Cannon6TwinAslt"
+		]
+	},
+	"TwinAssaultGun-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "TwinAssaultGun-Viper-Hover",
+		"name": "Twin Assault Gun Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "TwinAssaultGun-Cobra-Hover",
+		"name": "Twin Assault Gun Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "TwinAssaultGun-Python-Hover",
+		"name": "Twin Assault Gun Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "TwinAssaultGun-Bug-Hover",
+		"name": "Twin Assault Gun Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "TwinAssaultGun-Scorpion-Hover",
+		"name": "Twin Assault Gun Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "TwinAssaultGun-Mantis-Hover",
+		"name": "Twin Assault Gun Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "TwinAssaultGun-Leopard-Hover",
+		"name": "Twin Assault Gun Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "TwinAssaultGun-Panther-Hover",
+		"name": "Twin Assault Gun Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "TwinAssaultGun-Tiger-Hover",
+		"name": "Twin Assault Gun Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "TwinAssaultGun-Retaliation-Hover",
+		"name": "Twin Assault Gun Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "TwinAssaultGun-Retribution-Hover",
+		"name": "Twin Assault Gun Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "TwinAssaultGun-Vengeance-Hover",
+		"name": "Twin Assault Gun Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"TwinAssaultGun-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "TwinAssaultGun-Wyvern-Hover",
+		"name": "Twin Assault Gun Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"MG5TWINROTARY"
+		]
+	},
+	"PlasmiteFlamer-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "PlasmiteFlamer-Viper-Hover",
+		"name": "Plasmite Flamer Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "PlasmiteFlamer-Cobra-Hover",
+		"name": "Plasmite Flamer Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "PlasmiteFlamer-Python-Hover",
+		"name": "Plasmite Flamer Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "PlasmiteFlamer-Bug-Hover",
+		"name": "Plasmite Flamer Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "PlasmiteFlamer-Scorpion-Hover",
+		"name": "Plasmite Flamer Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "PlasmiteFlamer-Mantis-Hover",
+		"name": "Plasmite Flamer Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "PlasmiteFlamer-Leopard-Hover",
+		"name": "Plasmite Flamer Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "PlasmiteFlamer-Panther-Hover",
+		"name": "Plasmite Flamer Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "PlasmiteFlamer-Tiger-Hover",
+		"name": "Plasmite Flamer Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "PlasmiteFlamer-Retaliation-Hover",
+		"name": "Plasmite Flamer Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "PlasmiteFlamer-Retribution-Hover",
+		"name": "Plasmite Flamer Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "PlasmiteFlamer-Vengeance-Hover",
+		"name": "Plasmite Flamer Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"PlasmiteFlamer-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "PlasmiteFlamer-Wyvern-Hover",
+		"name": "Plasmite Flamer Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"PlasmiteFlamer"
+		]
+	},
+	"Flashlight-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Flashlight-Viper-Hover",
+		"name": "Flashlight Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Flashlight-Cobra-Hover",
+		"name": "Flashlight Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Flashlight-Python-Hover",
+		"name": "Flashlight Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Flashlight-Bug-Hover",
+		"name": "Flashlight Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Flashlight-Scorpion-Hover",
+		"name": "Flashlight Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Flashlight-Mantis-Hover",
+		"name": "Flashlight Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Flashlight-Leopard-Hover",
+		"name": "Flashlight Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Flashlight-Panther-Hover",
+		"name": "Flashlight Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Flashlight-Tiger-Hover",
+		"name": "Flashlight Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Flashlight-Retaliation-Hover",
+		"name": "Flashlight Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Flashlight-Retribution-Hover",
+		"name": "Flashlight Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Flashlight-Vengeance-Hover",
+		"name": "Flashlight Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Flashlight-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Flashlight-Wyvern-Hover",
+		"name": "Flashlight Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser3BEAMMk1"
+		]
+	},
+	"Scourge-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "Scourge-Viper-Hover",
+		"name": "Scourge Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "Scourge-Cobra-Hover",
+		"name": "Scourge Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "Scourge-Python-Hover",
+		"name": "Scourge Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "Scourge-Bug-Hover",
+		"name": "Scourge Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "Scourge-Scorpion-Hover",
+		"name": "Scourge Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "Scourge-Mantis-Hover",
+		"name": "Scourge Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "Scourge-Leopard-Hover",
+		"name": "Scourge Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "Scourge-Panther-Hover",
+		"name": "Scourge Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "Scourge-Tiger-Hover",
+		"name": "Scourge Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "Scourge-Retaliation-Hover",
+		"name": "Scourge Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "Scourge-Retribution-Hover",
+		"name": "Scourge Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "Scourge-Vengeance-Hover",
+		"name": "Scourge Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"Scourge-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "Scourge-Wyvern-Hover",
+		"name": "Scourge Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-A-T"
+		]
+	},
+	"NeedleGun-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "NeedleGun-Viper-Hover",
+		"name": "Needle Gun Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "NeedleGun-Cobra-Hover",
+		"name": "Needle Gun Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "NeedleGun-Python-Hover",
+		"name": "Needle Gun Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "NeedleGun-Bug-Hover",
+		"name": "Needle Gun Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "NeedleGun-Scorpion-Hover",
+		"name": "Needle Gun Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "NeedleGun-Mantis-Hover",
+		"name": "Needle Gun Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "NeedleGun-Leopard-Hover",
+		"name": "Needle Gun Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "NeedleGun-Panther-Hover",
+		"name": "Needle Gun Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "NeedleGun-Tiger-Hover",
+		"name": "Needle Gun Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "NeedleGun-Retaliation-Hover",
+		"name": "Needle Gun Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "NeedleGun-Retribution-Hover",
+		"name": "Needle Gun Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "NeedleGun-Vengeance-Hover",
+		"name": "Needle Gun Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"NeedleGun-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "NeedleGun-Wyvern-Hover",
+		"name": "Needle Gun Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"PulseLaser-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "PulseLaser-Viper-Hover",
+		"name": "Pulse Laser Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "PulseLaser-Cobra-Hover",
+		"name": "Pulse Laser Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "PulseLaser-Python-Hover",
+		"name": "Pulse Laser Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "PulseLaser-Bug-Hover",
+		"name": "Pulse Laser Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "PulseLaser-Scorpion-Hover",
+		"name": "Pulse Laser Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "PulseLaser-Mantis-Hover",
+		"name": "Pulse Laser Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "PulseLaser-Leopard-Hover",
+		"name": "Pulse Laser Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "PulseLaser-Panther-Hover",
+		"name": "Pulse Laser Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "PulseLaser-Tiger-Hover",
+		"name": "Pulse Laser Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "PulseLaser-Retaliation-Hover",
+		"name": "Pulse Laser Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "PulseLaser-Retribution-Hover",
+		"name": "Pulse Laser Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "PulseLaser-Vengeance-Hover",
+		"name": "Pulse Laser Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"PulseLaser-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "PulseLaser-Wyvern-Hover",
+		"name": "Pulse Laser Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Laser2PULSEMk1"
+		]
+	},
+	"SeraphMissileArray-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "SeraphMissileArray-Viper-Hover",
+		"name": "Seraph Missile Array Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "SeraphMissileArray-Cobra-Hover",
+		"name": "Seraph Missile Array Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "SeraphMissileArray-Python-Hover",
+		"name": "Seraph Missile Array Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "SeraphMissileArray-Bug-Hover",
+		"name": "Seraph Missile Array Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "SeraphMissileArray-Scorpion-Hover",
+		"name": "Seraph Missile Array Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "SeraphMissileArray-Mantis-Hover",
+		"name": "Seraph Missile Array Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "SeraphMissileArray-Leopard-Hover",
+		"name": "Seraph Missile Array Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "SeraphMissileArray-Panther-Hover",
+		"name": "Seraph Missile Array Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "SeraphMissileArray-Tiger-Hover",
+		"name": "Seraph Missile Array Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "SeraphMissileArray-Retaliation-Hover",
+		"name": "Seraph Missile Array Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "SeraphMissileArray-Retribution-Hover",
+		"name": "Seraph Missile Array Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "SeraphMissileArray-Vengeance-Hover",
+		"name": "Seraph Missile Array Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"SeraphMissileArray-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "SeraphMissileArray-Wyvern-Hover",
+		"name": "Seraph Missile Array Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-MdArt"
+		]
+	},
+	"HeavyLaser-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "HeavyLaser-Viper-Hover",
+		"name": "Heavy Laser Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "HeavyLaser-Cobra-Hover",
+		"name": "Heavy Laser Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "HeavyLaser-Python-Hover",
+		"name": "Heavy Laser Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "HeavyLaser-Bug-Hover",
+		"name": "Heavy Laser Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "HeavyLaser-Scorpion-Hover",
+		"name": "Heavy Laser Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "HeavyLaser-Mantis-Hover",
+		"name": "Heavy Laser Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "HeavyLaser-Leopard-Hover",
+		"name": "Heavy Laser Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "HeavyLaser-Panther-Hover",
+		"name": "Heavy Laser Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "HeavyLaser-Tiger-Hover",
+		"name": "Heavy Laser Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "HeavyLaser-Retaliation-Hover",
+		"name": "Heavy Laser Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "HeavyLaser-Retribution-Hover",
+		"name": "Heavy Laser Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "HeavyLaser-Vengeance-Hover",
+		"name": "Heavy Laser Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"HeavyLaser-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "HeavyLaser-Wyvern-Hover",
+		"name": "Heavy Laser Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"HeavyLaser"
+		]
+	},
+	"RailGun-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "RailGun-Viper-Hover",
+		"name": "Rail Gun Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "RailGun-Cobra-Hover",
+		"name": "Rail Gun Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "RailGun-Python-Hover",
+		"name": "Rail Gun Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "RailGun-Bug-Hover",
+		"name": "Rail Gun Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "RailGun-Scorpion-Hover",
+		"name": "Rail Gun Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "RailGun-Mantis-Hover",
+		"name": "Rail Gun Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "RailGun-Leopard-Hover",
+		"name": "Rail Gun Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "RailGun-Panther-Hover",
+		"name": "Rail Gun Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "RailGun-Tiger-Hover",
+		"name": "Rail Gun Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "RailGun-Retaliation-Hover",
+		"name": "Rail Gun Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "RailGun-Retribution-Hover",
+		"name": "Rail Gun Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "RailGun-Vengeance-Hover",
+		"name": "Rail Gun Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"RailGun-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "RailGun-Wyvern-Hover",
+		"name": "Rail Gun Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun2Mk1"
+		]
+	},
+	"ParticleGun-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "ParticleGun-Viper-Hover",
+		"name": "Particle Gun Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "ParticleGun-Cobra-Hover",
+		"name": "Particle Gun Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "ParticleGun-Python-Hover",
+		"name": "Particle Gun Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "ParticleGun-Bug-Hover",
+		"name": "Particle Gun Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "ParticleGun-Scorpion-Hover",
+		"name": "Particle Gun Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "ParticleGun-Mantis-Hover",
+		"name": "Particle Gun Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "ParticleGun-Leopard-Hover",
+		"name": "Particle Gun Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "ParticleGun-Panther-Hover",
+		"name": "Particle Gun Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "ParticleGun-Tiger-Hover",
+		"name": "Particle Gun Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "ParticleGun-Retaliation-Hover",
+		"name": "Particle Gun Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "ParticleGun-Retribution-Hover",
+		"name": "Particle Gun Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "ParticleGun-Vengeance-Hover",
+		"name": "Particle Gun Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"ParticleGun-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "ParticleGun-Wyvern-Hover",
+		"name": "Particle Gun Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"ParticleGun"
+		]
+	},
+	"GaussCannon-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "GaussCannon-Viper-Hover",
+		"name": "Gauss Cannon Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "GaussCannon-Cobra-Hover",
+		"name": "Gauss Cannon Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "GaussCannon-Python-Hover",
+		"name": "Gauss Cannon Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "GaussCannon-Bug-Hover",
+		"name": "Gauss Cannon Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "GaussCannon-Scorpion-Hover",
+		"name": "Gauss Cannon Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "GaussCannon-Mantis-Hover",
+		"name": "Gauss Cannon Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "GaussCannon-Leopard-Hover",
+		"name": "Gauss Cannon Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "GaussCannon-Panther-Hover",
+		"name": "Gauss Cannon Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "GaussCannon-Tiger-Hover",
+		"name": "Gauss Cannon Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "GaussCannon-Retaliation-Hover",
+		"name": "Gauss Cannon Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "GaussCannon-Retribution-Hover",
+		"name": "Gauss Cannon Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "GaussCannon-Vengeance-Hover",
+		"name": "Gauss Cannon Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"GaussCannon-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "GaussCannon-Wyvern-Hover",
+		"name": "Gauss Cannon Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"RailGun3Mk1"
+		]
+	},
+	"AvengerSAM-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "AvengerSAM-Viper-Hover",
+		"name": "Avenger SAM Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "AvengerSAM-Cobra-Hover",
+		"name": "Avenger SAM Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "AvengerSAM-Python-Hover",
+		"name": "Avenger SAM Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "AvengerSAM-Bug-Hover",
+		"name": "Avenger SAM Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "AvengerSAM-Scorpion-Hover",
+		"name": "Avenger SAM Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "AvengerSAM-Mantis-Hover",
+		"name": "Avenger SAM Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "AvengerSAM-Leopard-Hover",
+		"name": "Avenger SAM Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "AvengerSAM-Panther-Hover",
+		"name": "Avenger SAM Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "AvengerSAM-Tiger-Hover",
+		"name": "Avenger SAM Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "AvengerSAM-Retaliation-Hover",
+		"name": "Avenger SAM Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "AvengerSAM-Retribution-Hover",
+		"name": "Avenger SAM Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "AvengerSAM-Vengeance-Hover",
+		"name": "Avenger SAM Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"AvengerSAM-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "AvengerSAM-Wyvern-Hover",
+		"name": "Avenger SAM Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-LtSAM"
+		]
+	},
+	"StormbringerAALaser-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "StormbringerAALaser-Viper-Hover",
+		"name": "Stormbringer AA Laser Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "StormbringerAALaser-Cobra-Hover",
+		"name": "Stormbringer AA Laser Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "StormbringerAALaser-Python-Hover",
+		"name": "Stormbringer AA Laser Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "StormbringerAALaser-Bug-Hover",
+		"name": "Stormbringer AA Laser Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "StormbringerAALaser-Scorpion-Hover",
+		"name": "Stormbringer AA Laser Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "StormbringerAALaser-Mantis-Hover",
+		"name": "Stormbringer AA Laser Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "StormbringerAALaser-Leopard-Hover",
+		"name": "Stormbringer AA Laser Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "StormbringerAALaser-Panther-Hover",
+		"name": "Stormbringer AA Laser Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "StormbringerAALaser-Tiger-Hover",
+		"name": "Stormbringer AA Laser Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "StormbringerAALaser-Retaliation-Hover",
+		"name": "Stormbringer AA Laser Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "StormbringerAALaser-Retribution-Hover",
+		"name": "Stormbringer AA Laser Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "StormbringerAALaser-Vengeance-Hover",
+		"name": "Stormbringer AA Laser Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"StormbringerAALaser-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "StormbringerAALaser-Wyvern-Hover",
+		"name": "Stormbringer AA Laser Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"AAGunLaser"
+		]
+	},
+	"VindicatorSAM-Viper-Hover": {
+		"body": "Body1REC",
+		"id": "VindicatorSAM-Viper-Hover",
+		"name": "Vindicator SAM Viper Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Cobra-Hover": {
+		"body": "Body5REC",
+		"id": "VindicatorSAM-Cobra-Hover",
+		"name": "Vindicator SAM Cobra Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Python-Hover": {
+		"body": "Body11ABT",
+		"id": "VindicatorSAM-Python-Hover",
+		"name": "Vindicator SAM Python Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Bug-Hover": {
+		"body": "Body4ABT",
+		"id": "VindicatorSAM-Bug-Hover",
+		"name": "Vindicator SAM Bug Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Scorpion-Hover": {
+		"body": "Body8MBT",
+		"id": "VindicatorSAM-Scorpion-Hover",
+		"name": "Vindicator SAM Scorpion Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Mantis-Hover": {
+		"body": "Body12SUP",
+		"id": "VindicatorSAM-Mantis-Hover",
+		"name": "Vindicator SAM Mantis Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Leopard-Hover": {
+		"body": "Body2SUP",
+		"id": "VindicatorSAM-Leopard-Hover",
+		"name": "Vindicator SAM Leopard Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Panther-Hover": {
+		"body": "Body6SUPP",
+		"id": "VindicatorSAM-Panther-Hover",
+		"name": "Vindicator SAM Panther Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Tiger-Hover": {
+		"body": "Body9REC",
+		"id": "VindicatorSAM-Tiger-Hover",
+		"name": "Vindicator SAM Tiger Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Retaliation-Hover": {
+		"body": "Body3MBT",
+		"id": "VindicatorSAM-Retaliation-Hover",
+		"name": "Vindicator SAM Retaliation Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Retribution-Hover": {
+		"body": "Body7ABT",
+		"id": "VindicatorSAM-Retribution-Hover",
+		"name": "Vindicator SAM Retribution Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Vengeance-Hover": {
+		"body": "Body10MBT",
+		"id": "VindicatorSAM-Vengeance-Hover",
+		"name": "Vindicator SAM Vengeance Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"VindicatorSAM-Wyvern-Hover": {
+		"body": "Body13SUP",
+		"id": "VindicatorSAM-Wyvern-Hover",
+		"name": "Vindicator SAM Wyvern Hover",
+		"propulsion": "hover01",
+		"type": "DROID",
+		"weapons": [
+			"Missile-HvySAM"
+		]
+	},
+	"ASPOTTER": {
+		"body": "CyborgHeavyBody",
+		"id": "ASPOTTER",
+		"name": "*SPOTTER*",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-HPV"
+		]
+	},
+	"BaBaCivilian": {
+		"body": "B1BaBaPerson01",
+		"id": "BaBaCivilian",
+		"name": "Civilian",
+		"propulsion": "BaBaLegs",
+		"type": "PERSON"
+	},
+	"BabaBusCan": {
+		"body": "BusBody",
+		"id": "BabaBusCan",
+		"name": "School Bus",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BusCannon"
+		]
+	},
+	"BabaFireCan": {
+		"body": "FireBody",
+		"id": "BabaFireCan",
+		"name": "Cannon Fire Truck",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BusCannon"
+		]
+	},
+	"BabaFireTruck": {
+		"body": "FireBody",
+		"id": "BabaFireTruck",
+		"name": "Fire Truck",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BabaFlame"
+		]
+	},
+	"BabaJeep": {
+		"body": "B2JeepBody",
+		"id": "BabaJeep",
+		"name": "Jeep",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BJeepMG"
+		]
+	},
+	"BabaRKJeep": {
+		"body": "B2RKJeepBody",
+		"id": "BabaRKJeep",
+		"name": "Rocket Jeep",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BabaRocket"
+		]
+	},
+	"BarbarianBuggy": {
+		"body": "B3body-sml-buggy01",
+		"id": "BarbarianBuggy",
+		"name": "Buggy",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BuggyMG"
+		]
+	},
+	"BarbarianRKBuggy": {
+		"body": "B3bodyRKbuggy01",
+		"id": "BarbarianRKBuggy",
+		"name": "Rocket Buggy",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"BabaRocket"
+		]
+	},
+	"BarbarianTrike": {
+		"body": "B4body-sml-trike01",
+		"id": "BarbarianTrike",
+		"name": "Trike",
+		"propulsion": "BaBaProp",
+		"type": "DROID",
+		"weapons": [
+			"bTrikeMG"
+		]
+	},
+	"CobraComHalftrack": {
+		"body": "Body5REC",
+		"brain": "CommandBrain01",
+		"id": "CobraComHalftrack",
+		"name": "Command Turret Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"CommandTurret1"
+		]
+	},
+	"CobraHMGHalfTrack": {
+		"body": "Body5REC",
+		"id": "CobraHMGHalfTrack",
+		"name": "Heavy Machinegun Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"CobraHvyMortarHalftrack": {
+		"body": "Body5REC",
+		"id": "CobraHvyMortarHalftrack",
+		"name": "Bombard Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Mortar2Mk1"
+		]
+	},
+	"CobraLtA-Thalftrack": {
+		"body": "Body5REC",
+		"id": "CobraLtA-Thalftrack",
+		"name": "Lancer Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"CobraMRLHalftrack": {
+		"body": "Body5REC",
+		"id": "CobraMRLHalftrack",
+		"name": "Mini-Rocket Array Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	},
+	"CobraMedCnHTrks": {
+		"body": "Body5REC",
+		"id": "CobraMedCnHTrks",
+		"name": "Medium Cannon Cobra Half Track",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Cannon2A-TMk1"
+		]
+	},
+	"CobraMortarHalfTrack": {
+		"body": "Body5REC",
+		"id": "CobraMortarHalfTrack",
+		"name": "Mortar Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Mortar1Mk1"
+		]
+	},
+	"CobraPODHTracks": {
+		"body": "Body5REC",
+		"id": "CobraPODHTracks",
+		"name": "Mini-Rocket Cobra Half-Tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-Pod"
+		]
+	},
+	"CobraSensorHalftrack": {
+		"body": "Body5REC",
+		"id": "CobraSensorHalftrack",
+		"name": "Sensor Turret Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"sensor": "SensorTurret1Mk1",
+		"type": "DROID"
+	},
+	"Cyb-Atmiss-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Atmiss-GROUND",
+		"name": "Scourge Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Atmiss"
+		]
+	},
+	"Cyb-Cannon-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Cannon-GROUND",
+		"name": "Heavy Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgCannon"
+		]
+	},
+	"Cyb-Chain-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Chain-GROUND",
+		"name": "Machinegunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgChaingun"
+		]
+	},
+	"Cyb-Flamer-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Flamer-GROUND",
+		"name": "Flamer Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgFlamer01"
+		]
+	},
+	"Cyb-Gren": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Gren",
+		"name": "Grenadier Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Grenade"
+		]
+	},
+	"Cyb-Hvy-A-T": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-A-T",
+		"name": "Super Scourge Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-A-T"
+		]
+	},
+	"Cyb-Hvy-Acannon": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-Acannon",
+		"name": "Super Auto-Cannon Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-Acannon"
+		]
+	},
+	"Cyb-Hvy-HPV": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-HPV",
+		"name": "Super HVC Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-HPV"
+		]
+	},
+	"Cyb-Hvy-Mcannon": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-Mcannon",
+		"name": "Super Heavy-Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-Mcannon"
+		]
+	},
+	"Cyb-Hvy-PulseLsr": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-PulseLsr",
+		"name": "Super Pulse Laser Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-PulseLsr"
+		]
+	},
+	"Cyb-Hvy-RailGunner": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-RailGunner",
+		"name": "Super Rail-Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-RailGunner"
+		]
+	},
+	"Cyb-Hvy-TK": {
+		"available": true,
+		"body": "CyborgHeavyBody",
+		"id": "Cyb-Hvy-TK",
+		"name": "Super Tank-Killer Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG_SUPER",
+		"weapons": [
+			"Cyb-Hvywpn-TK"
+		]
+	},
+	"Cyb-Laser1-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Laser1-GROUND",
+		"name": "Flashlight Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Laser"
+		]
+	},
+	"Cyb-Mechanic": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Mechanic",
+		"name": "Mechanic Cyborg",
+		"propulsion": "CyborgLegs",
+		"repair": "CyborgRepair",
+		"type": "CYBORG_REPAIR"
+	},
+	"Cyb-Rail1-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Rail1-GROUND",
+		"name": "Needle Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Rail1"
+		]
+	},
+	"Cyb-Rocket-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Rocket-GROUND",
+		"name": "Lancer Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgRocket"
+		]
+	},
+	"Cyb-RotMG-GROUND": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-RotMG-GROUND",
+		"name": "Assault Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgRotMG"
+		]
+	},
+	"Cyb-Thermite": {
+		"available": true,
+		"body": "CyborgLightBody",
+		"id": "Cyb-Thermite",
+		"name": "Thermite Flamer Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Thermite"
+		]
+	},
+	"CyborgCannon01Grd": {
+		"body": "CyborgLightBody",
+		"id": "CyborgCannon01Grd",
+		"name": "Heavy Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgCannon"
+		]
+	},
+	"CyborgChain01Ground": {
+		"body": "CyborgLightBody",
+		"id": "CyborgChain01Ground",
+		"name": "Machinegunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgChaingun"
+		]
+	},
+	"CyborgFlamer01Grd": {
+		"body": "CyborgLightBody",
+		"id": "CyborgFlamer01Grd",
+		"name": "Flamer Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgFlamer01"
+		]
+	},
+	"CyborgRkt01Ground": {
+		"body": "CyborgLightBody",
+		"id": "CyborgRkt01Ground",
+		"name": "Lancer Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgRocket"
+		]
+	},
+	"CyborgRotMgGround": {
+		"body": "CyborgLightBody",
+		"id": "CyborgRotMgGround",
+		"name": "Assault Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"CyborgRotMG"
+		]
+	},
+	"MP-Cyb-ATmiss-GRD": {
+		"body": "CyborgLightBody",
+		"id": "MP-Cyb-ATmiss-GRD",
+		"name": "Scourge Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Atmiss"
+		]
+	},
+	"MP-Cyb-Laser1-GRD": {
+		"body": "CyborgLightBody",
+		"id": "MP-Cyb-Laser1-GRD",
+		"name": "Flashlight Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Laser"
+		]
+	},
+	"MP-Cyb-Needle-GRD": {
+		"body": "CyborgLightBody",
+		"id": "MP-Cyb-Needle-GRD",
+		"name": "Needle Gunner Cyborg",
+		"propulsion": "CyborgLegs",
+		"type": "CYBORG",
+		"weapons": [
+			"Cyb-Wpn-Rail1"
+		]
+	},
+	"P0CobraHvyMGHtrack": {
+		"body": "Body5REC",
+		"id": "P0CobraHvyMGHtrack",
+		"name": "Heavy Machinegun Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"P0CobraLtATRktHtrack": {
+		"body": "Body5REC",
+		"id": "P0CobraLtATRktHtrack",
+		"name": "Lancer Cobra Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-LtA-T"
+		]
+	},
+	"P0PythonComTracks": {
+		"body": "Body11ABT",
+		"brain": "CommandBrain01",
+		"id": "P0PythonComTracks",
+		"name": "Command Turret Python Tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"CommandTurret1"
+		]
+	},
+	"P0cam3PyFlakHT": {
+		"body": "Body11ABT",
+		"id": "P0cam3PyFlakHT",
+		"name": "AA Cyclone Flak Cannon Python Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"AAGun2Mk1"
+		]
+	},
+	"P6-M-QMG1-HT": {
+		"body": "Body5REC",
+		"id": "P6-M-QMG1-HT",
+		"name": "*P6-M-QMG1-HT*",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"QuadMg1AAGun"
+		]
+	},
+	"PhytonHTrackAssGun": {
+		"body": "Body11ABT",
+		"id": "PhytonHTrackAssGun",
+		"name": "Assault Gun Python Half Track",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"SK-Leopard-Htrk-Needle": {
+		"body": "Body2SUP",
+		"id": "SK-Leopard-Htrk-Needle",
+		"name": "*SK-Leopard-Htrk-Needle*",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"RailGun1Mk1"
+		]
+	},
+	"SK-Panther-Htrk-ASGun": {
+		"body": "Body6SUPP",
+		"id": "SK-Panther-Htrk-ASGun",
+		"name": "*SK-Panther-Htrk-ASGun*",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG4ROTARYMk1"
+		]
+	},
+	"SK-Panther-Htrk-BB": {
+		"body": "Body6SUPP",
+		"id": "SK-Panther-Htrk-BB",
+		"name": "*SK-Panther-Htrk-BB*",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-BB"
+		]
+	},
+	"SK-Retre-Htrk-Pepper": {
+		"body": "Body7ABT",
+		"id": "SK-Retre-Htrk-Pepper",
+		"name": "*SK-Retre-Htrk-Pepper*",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Mortar3ROTARYMk1"
+		]
+	},
+	"ScorpHTrackHMG": {
+		"body": "Body8MBT",
+		"id": "ScorpHTrackHMG",
+		"name": "Heavy Machinegun Scorpion Half Tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG1Mk1"
+		]
+	},
+	"ViperFlameHalfTracks": {
+		"body": "Body1REC",
+		"id": "ViperFlameHalfTracks",
+		"name": "Flamer Viper Half-Tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Flame1Mk1"
+		]
+	},
+	"ViperHMGHalftrack": {
+		"body": "Body1REC",
+		"id": "ViperHMGHalftrack",
+		"name": "Heavy Machinegun Viper Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG3Mk1"
+		]
+	},
+	"ViperLtCannonHTracks": {
+		"body": "Body1REC",
+		"id": "ViperLtCannonHTracks",
+		"name": "Light Cannon Viper Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Cannon1Mk1"
+		]
+	},
+	"ViperLtMGHalfTracks": {
+		"body": "Body1REC",
+		"id": "ViperLtMGHalfTracks",
+		"name": "Machinegun Viper Half-Tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG1Mk1"
+		]
+	},
+	"ViperMG02Halftrack": {
+		"body": "Body1REC",
+		"id": "ViperMG02Halftrack",
+		"name": "Twin Machinegun Viper Half-tracks",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"MG2Mk1"
+		]
+	},
+	"ViperMRLHalfTracks": {
+		"body": "Body1REC",
+		"id": "ViperMRLHalfTracks",
+		"name": "Mini-Rocket Array Viper Half Track",
+		"propulsion": "HalfTrack",
+		"type": "DROID",
+		"weapons": [
+			"Rocket-MRL"
+		]
+	}
+}
