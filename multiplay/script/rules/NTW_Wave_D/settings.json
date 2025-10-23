@@ -29,8 +29,11 @@
 	"playerExperienceModifier": 0,
 	"playersManipulation": "AI",
 
-	"rule_hoverFlame": true,
-	"rule_strongHover": true,
-	"rule_lateTracks": true,
-	"rule_lightWeapons": true
+	"rules": {
+		"hoverFlame": true,
+		"strongHover": true,
+		"lateTracks": true,
+		"strongT4": true,
+		"noSnails": true
+	}
 }

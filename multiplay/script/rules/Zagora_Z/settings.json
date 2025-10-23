@@ -2,27 +2,24 @@
 	"totalGameTime": 90,
 	"protectTimeM": 5,
 	"pauseM": 2,
-	"inWavePauseS": 3,
+	"inWavePauseS": 1,
 	"INCREM_PAUSEM": 0.0,
-	"timeHandicapM": 4,
+	"timeHandicapM": 2,
 	"RESIDUAL": null,
 
-	"startHeight": 40,
+	"startHeight": 79,
 	"expansionDirection": "north",
-	"expansionAmount": 4,
-	"transporterUnitCount": 40,
-	"transporterExperience": 9999,
-	"cyborgTransport": false,
-	"landEverywhere": false,
+	"expansionAmount": 0,
+	"transporterUnitCount": 11,
+	"transporterExperience": 0,
+	"cyborgTransport": true,
+	"landEverywhere": true,
 
-	"Kpower": 0.42,
-	"doublePowerM": 15,
-	"startPowerC": 0,
+	"Kpower": 0.5,
+	"doublePowerM": 5,
+	"startPowerC": -3000,
 	"Kfinal": 2,
-	"structPower": {
-		"DEFENSE": 0.01,
-		"REARM PAD": 0.001
-	},
+	"structPower": {},
 
 	"waterLanding": false,
 	"waterStructure": false,
@@ -35,7 +32,7 @@
 		"hoverFlame": false,
 		"strongHover": false,
 		"lateTracks": false,
-		"strongT4": true,
-		"noSnails": true
+		"strongT4": false,
+		"noSnails": false
 	}
 }

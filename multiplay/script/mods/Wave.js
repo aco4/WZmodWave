@@ -30,8 +30,8 @@ class Wave
 
 	constructor()
 	{
-		const expansionDirection = this.getExpansionDirection();
-		Scrim.growDirection(expansionDirection, settings.expansionAmount);
+		this.currentExpansionDirection = this.getCurrentExpansionDirection();
+		Scrim.growDirection(this.currentExpansionDirection, settings.expansionAmount);
 
 		giveResearch(Wave.AI);
 
@@ -45,13 +45,13 @@ class Wave
 		this.unfinishedTransports = 0;
 		this.unitsLandedCount = 0;
 
-		const { droidZone, structZone } = this.getZones(expansionDirection);
+		const { droidZone, structZone } = this.getZones();
 		this.droidZone = droidZone;
 		this.pushStructs(structZone);
 		this.predetermine(this.timeS);
 	}
 
-	getExpansionDirection()
+	getCurrentExpansionDirection()
 	{
 		if (settings.expansionDirection == "all" )
 		{
@@ -91,11 +91,7 @@ class Wave
 
 	get isFinal()
 	{
-		const { x1, y1, x2, y2 } = Scrim.get();
-		return x1 == 0
-			&& y1 == 0
-			&& x2 == mapWidth
-			&& y2 == mapHeight;
+		return Scrim.isMax;
 	}
 
 	get isNotFinal()
@@ -115,10 +111,14 @@ class Wave
 		}
 	}
 
-	getZones(expansionDirection)
+	getZones()
 	{
-		let droidZone = Scrim.getDroidZone();
-		let structZone = Scrim.getStructZone();
+		if (settings.landEverywhere)
+		{
+			return { droidZone: Scrim.structArea, structZone: null };
+		}
+		let droidZone = Scrim.droidArea;
+		let structZone = Scrim.structArea;
 
 		if (this.isFinal)
 		{
@@ -127,22 +127,22 @@ class Wave
 			structZone.x2 = 0;
 			structZone.y2 = 0;
 		}
-		else if (expansionDirection == "north")
+		else if (this.currentExpansionDirection == "north")
 		{
 			droidZone.y2 = droidZone.y1 + Math.max(1, settings.expansionAmount);
 			structZone.y2 = structZone.y1 + settings.expansionAmount;
 		}
-		else if (expansionDirection == "east")
+		else if (this.currentExpansionDirection == "east")
 		{
 			droidZone.x1 = droidZone.x2 - Math.max(1, settings.expansionAmount);
 			structZone.x1 = structZone.x2 - settings.expansionAmount;
 		}
-		else if (expansionDirection == "south")
+		else if (this.currentExpansionDirection == "south")
 		{
 			droidZone.y1 = droidZone.y2 - Math.max(1, settings.expansionAmount);
 			structZone.y1 = structZone.y2 - settings.expansionAmount;
 		}
-		else if (expansionDirection == "west")
+		else if (this.currentExpansionDirection == "west")
 		{
 			droidZone.x2 = droidZone.x1 + Math.max(1, settings.expansionAmount);
 			structZone.x2 = structZone.x1 + settings.expansionAmount;
@@ -217,7 +217,7 @@ class Wave
 				/* shape    = */ 25,
 				/* canVisit = */ (x, y) =>
 				{
-					return Scrim.isInside(x, y)
+					return Scrim.contains(x, y, "droid")
 						&& terrainType(x, y) != TER_CLIFFFACE
 						&& (terrainType(x, y) != TER_WATER || settings.waterLanding)
 						&& !getObject(x, y);
@@ -302,54 +302,45 @@ class Wave
 
 	getStructTiles(structZone)
 	{
-		const {x1, y1, x2, y2} = structZone;
-
 		let availableTiles = [];
-		for (let x = x1; x < x2; x++)
+		for (const { x, y } of Scrim.iterate(structZone))
 		{
-			for (let y = y1; y < y2; y++)
+			if (terrainType(x, y) == TER_CLIFFFACE)
 			{
-				if (terrainType(x, y) == TER_CLIFFFACE)
-				{
-					continue;
-				}
-				if (settings.waterStructure == false && terrainType(x, y) == TER_WATER)
-				{
-					continue;
-				}
-				if (getObject(x, y))
-				{
-					continue;
-				}
-				availableTiles.push([x, y]);
+				continue;
 			}
+			if (settings.waterStructure == false && terrainType(x, y) == TER_WATER)
+			{
+				continue;
+			}
+			if (getObject(x, y))
+			{
+				continue;
+			}
+			availableTiles.push([x, y]);
 		}
 		return availableTiles;
 	}
 
 	getDroidTiles()
 	{
-		const {x1, y1, x2, y2} = this.droidZone;
-
 		let availableTiles = [];
-		for (let x = x1; x < x2; x++)
+		for (const { x, y } of Scrim.iterate(this.droidZone))
 		{
-			for (let y = y1; y < y2; y++)
+			if (terrainType(x, y) == TER_CLIFFFACE)
 			{
-				if (terrainType(x, y) == TER_CLIFFFACE)
-				{
-					continue;
-				}
-				if (settings.waterLanding == false && terrainType(x, y) == TER_WATER)
-				{
-					continue;
-				}
-				if (getObject(x, y))
-				{
-					continue;
-				}
-				availableTiles.push([x, y]);
+				continue;
 			}
+			if (settings.waterLanding == false && terrainType(x, y) == TER_WATER)
+			{
+				continue;
+			}
+			if (getObject(x, y))
+			{
+				continue;
+			}
+			availableTiles.push([x, y]);
+
 		}
 		return availableTiles;
 	}
@@ -357,7 +348,6 @@ class Wave
 	sendTransport()
 	{
 		const { x, y, virtualDroids } = this.transports.pop();
-		const spawnLocation = onBorder(x, y, -10);
 		let finished = false;
 		const dropCargo = () => {
 			for (const virtualDroid of virtualDroids)
@@ -383,21 +373,33 @@ class Wave
 				this.unitsLandedCount++;
 			}
 			finished = true;
+			if (this.totalTransportCount <= 5) {
+				Dropship.play("Incoming enemy transport");
+			}
 			this.unfinishedTransports--;
-			Dropship.play("Incoming enemy transport");
 		};
+
+		const spawnLocation = Dropship.snap({ x, y, margin: -10, border: this.currentExpansionDirection })
 
 		new Dropship(Wave.AI, spawnLocation.x, spawnLocation.y, {
 			experience: settings.transporterExperience,
+			cyborgTransport: settings.cyborgTransport,
 			objectives: [
 				Dropship.objective({
 					getLocation : (dropship) => { return { x, y }; },
-					isComplete  : (dropship) => dropship.isAt(x, y, 2),
+					isComplete  : (dropship) => dropship.isAt(x, y),
+					onComplete  : (dropship) => dropship.stop(),
+				}),
+				Dropship.objective("pause"),
+				Dropship.objective({
+					getLocation : null,
+					isComplete  : (dropship) => true,
 					onComplete  : (dropship) => dropCargo(),
 				}),
-				Dropship.objective("depart")
+				Dropship.objective(`depart${this.currentExpansionDirection}`)
 			],
-			onDeath: () => {
+			onDeath: () =>
+			{
 				if (!finished)
 				{
 					this.unfinishedTransports--;

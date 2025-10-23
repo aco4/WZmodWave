@@ -27,5 +27,13 @@
 	"enableWaveExperience": true,
 	"waveExperienceModifier": null,
 	"playerExperienceModifier": null,
-	"playersManipulation": true
+	"playersManipulation": true,
+
+	"rules": {
+		"hoverFlame": false,
+		"strongHover": false,
+		"lateTracks": false,
+		"blackTracks": false,
+		"noSnails": true
+	}
 }

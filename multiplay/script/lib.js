@@ -116,56 +116,21 @@ function shuffle(array)
 	}
 }
 
-// Snap (x, y) to the nearest border
-// Optional margin offset (e.g. 2 tiles inwards, -3 tiles outward)
-function onBorder(x, y, margin = 0)
-{
-	const { x: x1, y: y1, x2, y2 } = getScrollLimits();
-
-	// Distances to each border
-	const distLeft   = Math.abs(x - x1);
-	const distRight  = Math.abs(x2 - x);
-	const distTop    = Math.abs(y - y1);
-	const distBottom = Math.abs(y2 - y);
-
-	const minDist = Math.min(distLeft, distRight, distTop, distBottom);
-
-	if (minDist === distLeft)
-	{
-		x = x1 + margin;
-	}
-	else if (minDist === distRight)
-	{
-		x = x2 - margin;
-	}
-	else if (minDist === distTop)
-	{
-		y = y1 + margin;
-	}
-	else
-	{ // bottom
-		y = y2 - margin;
-	}
-
-	return {
-		x: Math.max(0, Math.min(mapWidth - 1, x)),
-		y: Math.max(0, Math.min(mapHeight - 1, y)),
-	};
-}
-
 function BFS(sx, sy, max_count, shape, can_visit, visit, stop)
 {
 	const Cardinals = [[0, 1], [1, 0], [0, -1], [-1, 0]];
 	const Ordinals = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
 	const seen = new Set();
-	const queue = [[sx, sy]];
-	function addToQueue(x, y)
+	const queue = [];
+	const addToQueue = (x, y) =>
 	{
 		if (!seen.has(`${x},${y}`)) {
 			seen.add(`${x},${y}`);
 			queue.push([x, y]);
 		}
 	}
+
+	addToQueue(sx, sy);
 
 	let visit_count = 0;
 	while (queue.length > 0 && visit_count < max_count && !stop())

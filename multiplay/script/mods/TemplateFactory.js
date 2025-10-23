@@ -129,13 +129,13 @@ class TemplateFactory
 			weaponFilter: (weaponID) => weaponID == "bTrikeMG",
 		},
 
-		// Rules from settings
+		// Custom rules
 
-		settings.rule_hoverFlame && { // hovers must use flame
+		settings.rules.hoverFlame && { // hovers must use flame
 			propulsionPredicate: (propulsionID) => propulsionID == "hover01",
 			weaponFilter: (weaponID) => weaponID.toUpperCase().includes("FLAME"),
 		},
-		settings.rule_strongHover && { // viper, scorpion, mantis, and leopard must not use hover
+		settings.rules.strongHover && { // viper, scorpion, mantis, and leopard must not use hover
 			bodyPredicate: (bodyID) =>
 				bodyID == "Body1REC" ||
 				bodyID == "Body8MBT" ||
@@ -143,7 +143,7 @@ class TemplateFactory
 				bodyID == "Body2SUP",
 			propulsionFilter: (propulsionID) => propulsionID != "hover01",
 		},
-		settings.rule_lateTracks && { // non-T4 bodies must not use tracks
+		settings.rules.lateTracks && { // non-T4 bodies must not use tracks
 			bodyPredicate: (bodyID) =>
 				bodyID != "Body3MBT" &&
 				bodyID != "Body7ABT" &&
@@ -152,21 +152,26 @@ class TemplateFactory
 				bodyID != "Body14SUP",
 			propulsionFilter: (propulsionID) => propulsionID != "tracked01",
 		},
-		settings.rule_lateTracks && { // T4 bodies must use tracks
+		settings.rules.strongT4 && { // T4 bodies must not use half-tracks
 			bodyPredicate: (bodyID) =>
 				bodyID == "Body3MBT" ||
 				bodyID == "Body7ABT" ||
 				bodyID == "Body10MBT" ||
 				bodyID == "Body13SUP" ||
 				bodyID == "Body14SUP",
-			propulsionFilter: (propulsionID) => propulsionID == "tracked01",
+			propulsionFilter: (propulsionID) => propulsionID != "HalfTrack",
 		},
-		settings.rule_lightWeapons && { // leopard/viper must not use Medium Cannon or Inferno or Heavy Cannon or Twin Assault Cannon
-			bodyPredicate: (bodyID) => bodyID == "Body2SUP" || bodyID == "Body1REC",
+		settings.rules.noSnails && { // light bodies must not use heavy weapons
+			bodyPredicate: (bodyID) =>
+				bodyID == "Body1REC" ||
+				bodyID == "Body4ABT" ||
+				bodyID == "Body2SUP" ||
+				bodyID == "Body3MBT",
 			weaponFilter: (weaponID) =>
 				weaponID != "Cannon2A-TMk1" &&
 				weaponID != "Flame2" &&
 				weaponID != "Cannon6TwinAslt" &&
+				weaponID != "Rocket-IDF" &&
 				weaponID != "Cannon375mmMk1",
 		},
 	].filter(r => !!r);

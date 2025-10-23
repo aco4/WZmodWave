@@ -93,7 +93,8 @@
 		"Cannon5VulcanMk1"
 	],
 	"R-Wpn-Mortar3": [
-		"Mortar1Mk1"
+		"Mortar1Mk1",
+		"Cyb-Wpn-Grenade"
 	],
 	"R-Wpn-Mortar-Incendiary": [
 		"Mortar3ROTARYMk1",

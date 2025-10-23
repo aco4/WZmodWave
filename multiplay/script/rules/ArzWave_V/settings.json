@@ -15,7 +15,7 @@
 
 	"Kpower": 0.03,
 	"doublePowerM": 1,
-	"startPowerC": 2000,
+	"startPowerC": 1100,
 	"Kfinal": 2,
 	"structPower": {},
 
@@ -24,5 +24,13 @@
 	"enableWaveExperience": false,
 	"waveExperienceModifier": 0,
 	"playerExperienceModifier": 0,
-	"playersManipulation": "AI"
+	"playersManipulation": "AI",
+
+	"rules": {
+		"hoverFlame": false,
+		"strongHover": false,
+		"lateTracks": false,
+		"strongT4": true,
+		"noSnails": true
+	}
 }

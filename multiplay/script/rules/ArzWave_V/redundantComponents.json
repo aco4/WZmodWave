@@ -72,7 +72,9 @@
 	],
 	"R-Cyborg-Hvywpn-RailGunner": [
 		"Cyb-Wpn-Rail1",
-		"CyborgLightBody"
+		"Cyb-Hvywpn-Acannon",
+		"Cyb-Hvywpn-HPV",
+		"Cyb-Hvywpn-Mcannon"
 	],
 	"R-Cyborg-Hvywpn-TK": [
 		"CyborgRocket"
@@ -84,9 +86,6 @@
 	],
 	"R-Wpn-Rocket07-Tank-Killer": [
 		"Rocket-LtA-T"
-	],
-	"R-Wpn-Cannon2Mk1": [
-		"Cannon1Mk1"
 	],
 	"R-Wpn-Cannon6TwinAslt": [
 		"Cannon5VulcanMk1",
@@ -126,10 +125,7 @@
 		"Cannon4AUTOMk1",
 		"Cannon4AUTO-VTOL",
 		"Cannon5Vulcan-VTOL",
-		"Cannon375mmMk1",
-		"Cyb-Hvywpn-Acannon",
-		"Cyb-Hvywpn-HPV",
-		"Cyb-Hvywpn-Mcannon"
+		"Cannon375mmMk1"
 	],
 	"R-Wpn-RailGun02": [
 		"RailGun1-VTOL",

@@ -23,6 +23,7 @@ class Dropship {
     constructor(player = selectedPlayer, x = 0, y = 0, args = {}) {
         Object.assign(this, {
             cyborgTransport: false,
+            turret: "MG1-VTOL",
             objectives: [],
             onDeath: () => {},
             onMissionComplete: () => {},
@@ -38,7 +39,7 @@ class Dropship {
 
         hackNetOff();
         const body = this.cyborgTransport ? "TransporterBody" : "SuperTransportBody";
-        const droid = addDroid(player, x, y, "Dropship", body, "V-Tol", "", "", ["MG1-VTOL"]);
+        const droid = addDroid(player, x, y, "Dropship", body, "V-Tol", "", "", [this.turret]);
         setDroidExperience(droid, this.experience);
         hackNetOn();
 
@@ -56,7 +57,7 @@ class Dropship {
         if (this.currentObjective.isComplete(this)) {
             this.completeObjective();
         } else {
-            this.move();
+            this.gotoObjective();
         }
     }
 
@@ -68,14 +69,22 @@ class Dropship {
             this.onMissionComplete(this);
             Dropship.dropships.delete(this);
         } else {
-            this.move();
+            this.gotoObjective();
         }
     }
 
-    move() {
-        const { x, y } = this.currentObjective.getLocation(this);
+    gotoObjective() {
+        if (this.currentObjective.getLocation) {
+            const { x, y } = this.currentObjective.getLocation(this);
+            this.move(x, y);
+        }
+    }
+
+    move(x, y) {
+        x = Math.max(1, Math.min(mapWidth - 1, x));
+        y = Math.max(1, Math.min(mapHeight - 1, y));
         hackNetOff();
-        orderDroidLoc(this.droid, DORDER_MOVE, x, y); // TODO fails if object (or cliff?)
+        orderDroidLoc(this.droid, DORDER_MOVE, x, y); // TODO fails if object is occupying the tile
         hackNetOn();
     }
 
@@ -91,8 +100,10 @@ class Dropship {
         hackNetOn();
     }
 
-    drop() {
-
+    stop() {
+        hackNetOff();
+        orderDroid(this.droid, DORDER_STOP);
+        hackNetOn();
     }
 
     isAt(x, y, margin = 1) {
@@ -154,7 +165,7 @@ class Dropship {
     }
 
     static play(sound, player = null) {
-        const sounds = {
+        const SOUNDS = {
             "LZ clear"                        : () => playSound("lz-clear.ogg"),
             "Enemy transport detected"        : () => playSound("pcv381.ogg"),
             "Incoming enemy transport"        : () => playSound("pcv395.ogg"),
@@ -169,14 +180,38 @@ class Dropship {
             "Transport unable to land"        : () => playSound("pcv447.ogg"),
         };
         if (player === null || player === me) {
-            sounds[sound]?.();
+            SOUNDS[sound]?.();
         }
     }
 
-    // Snap (x, y) to the nearest border
-    // Optional margin offset (e.g. 2 tiles inwards, -3 tiles outward)
-    static onBorder(x, y, margin = 0) {
+    /**
+     * Snap (x, y) to the nearest border.
+     *
+     * @param {Object} [options={}] - named parameters
+     * @param {number} [options.x=0]
+     * @param {number} [options.y=0]
+     * @param {number} [options.margin=0] - Optional margin offset (e.g. 2 tiles inwards, -3 tiles outward)
+     * @param {?string} [options.border=null] - Optional border ("LEFT", "RIGHT", "TOP", "BOTTOM")
+     * @returns {Object} x, y
+     */
+    static snap({ x = 0, y = 0, margin = 0, border = null } = {}) {
         const { x: x1, y: y1, x2, y2 } = getScrollLimits();
+
+        if (border != null) {
+            const B = border.toUpperCase();
+            if (B == "LEFT" || B == "WEST") {
+                return { x: Math.max(1, x1 + 1 + margin), y: y };
+            }
+            if (B == "RIGHT" || B == "EAST") {
+                return { x: Math.min(mapWidth - 1, mapWidth - 1 - margin), y: y };
+            }
+            if (B == "TOP" || B == "NORTH") {
+                return { x: x, y: Math.max(1, y1 + 1 + margin) };
+            }
+            if (B == "BOTTOM" || B == "SOUTH") {
+                return { x: x, y: Math.min(mapHeight - 1, mapHeight - 1 - margin) };
+            }
+        }
 
         // Distances to each border
         const distLeft   = Math.abs(x - x1);
@@ -203,16 +238,27 @@ class Dropship {
     }
 
     static objective(args = {}) {
-        if (args === "depart") {
-            return {
-                getLocation : (dropship) => Dropship.onBorder(dropship.x, dropship.y, -250),
-                isComplete  : (dropship) => dropship.isOutside(),
-                onComplete  : (dropship) => dropship.despawn(),
-            };
+        if (typeof args === "string") {
+            const stockObjective = args.toLowerCase();
+
+            if (stockObjective == "depart") {
+                return {
+                    getLocation : (dropship) => Dropship.snap({x: dropship.x, y: dropship.y, margin: -250 }),
+                    isComplete  : (dropship) => dropship.isOutside(),
+                    onComplete  : (dropship) => dropship.despawn(),
+                };
+            }
+            if (stockObjective == "departnorth") {
+                return {
+                    getLocation : (dropship) => Dropship.snap({x: dropship.x, y: dropship.y, margin: -250, border: "north" }),
+                    isComplete  : (dropship) => dropship.isOutside(),
+                    onComplete  : (dropship) => dropship.despawn(),
+                };
+            }
         }
         return {
-            getLocation : (dropship) => { return { x: 0, y: 0 }; },
-            isComplete  : (dropship) => {},
+            getLocation : null,
+            isComplete  : (dropship) => true,
             onComplete  : (dropship) => {},
             ...args
         };

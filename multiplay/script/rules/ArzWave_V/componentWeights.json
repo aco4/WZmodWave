@@ -1,10 +1,14 @@
 {
-	"CyborgLegs": 80,
-	"HalfTrack": 90,
-	"tracked01": 110,
+	"CyborgLightBody": 400,
+	"CyborgHeavyBody": 400,
+
+	"HalfTrack": 200,
+	"tracked01": 30,
 	"hover01": 50,
 	"V-Tol": 0,
 
+	"Cyb-Wpn-Grenade": 40,
+	"Mortar1Mk1": 40,
 	"Mortar2Mk1": 0,
 	"Mortar3ROTARYMk1": 0,
 	"Mortar-Incendiary": 0,
@@ -19,7 +23,6 @@
 
 	"Laser4-PlasmaCannon": 0,
 	"Rocket-VTOL-Sunburst": 0,
-	"Cyb-Wpn-Grenade": 0,
 
 	"AAGun2Mk1": 20,
 	"QuadMg1AAGun": 25,

@@ -1,5 +1,6 @@
 {
-	"CyborgLegs": 100,
+	"CyborgLightBody": 100,
+	"CyborgHeavyBody": 100,
 	"HalfTrack": 100,
 	"tracked01": 100,
 	"hover01": 100,
