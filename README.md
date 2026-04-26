@@ -30,6 +30,15 @@ In order to win, you have to survive untill the whole map is revealed.
 - Add one `waveAI` to the last slot. AI difficulty level will affect the number of enemy units.
 - Only the host needs to enable the mod.
 
+## Tricks & hints
+- Enemies don't make any difference between a structure or a droid. You could use cheap structures to distract them, and get some time
+- Enemy's droid templates do vary with time, but do not depend on your templates. Try to find more effective propulsion/body combinations.
+- Enemy doesn't have Sensors units, but has artillery and sensor towers.
+- In about an hour of game, number of enemies will start growing huge. You should try to win before that time mark.
+- You can delay next landing by leaving some enemy units alive for some time. This doesn't include VTOL, AA guns, and fortifications.
+- Don't forget to add more structures, as your limits increase.
+- About a half of enemy units will have fragile propulsion, so use heavy artillery to your advantage.
+
 ## Settings and maps
 ### Choosing a map
 You can use any map, but `10c-Stone-Jungle-v3w.wz` is recommended.
@@ -45,52 +54,59 @@ When choosing another map:
 
 ### Configuration
 By default, the mod will use:
-- `multiplay/script/rules/settings.json`
-- `multiplay/script/rules/research.json`
-- `multiplay/script/rules/structure.json`
-- `multiplay/script/rules/startingComponents.json`
-- `multiplay/script/rules/componentWeights.json`
-- `multiplay/script/rules/redundantComponents.json`
+- `multiplay/script/rules/config/settings.json`
+- `multiplay/script/rules/config/research.json`
+- `multiplay/script/rules/config/structure.json`
+- `multiplay/script/rules/config/startingComponents.json`
+- `multiplay/script/rules/config/componentWeights.json`
+- `multiplay/script/rules/config/redundantComponents.json`
 or, if present:
-- `multiplay/script/rules/<MapName>/settings.json`
-- `multiplay/script/rules/<MapName>/research.json`
-- `multiplay/script/rules/<MapName>/structure.json`
-- `multiplay/script/rules/<MapName>/startingComponents.json`
-- `multiplay/script/rules/<MapName>/componentWeights.json`
-- `multiplay/script/rules/<MapName>/redundantComponents.json`
+- `multiplay/script/rules/config/<MapName>/settings.json`
+- `multiplay/script/rules/config/<MapName>/research.json`
+- `multiplay/script/rules/config/<MapName>/structure.json`
+- `multiplay/script/rules/config/<MapName>/startingComponents.json`
+- `multiplay/script/rules/config/<MapName>/componentWeights.json`
+- `multiplay/script/rules/config/<MapName>/redundantComponents.json`
 
 Explanation for `settings.json`:
 ```
 {
-	"totalGameTime": 90,  # time in minutes until enemies reach the rank 16
+	"waveUnitsExpTimeM": { "zero": 0, "hero": 60 }, # enemy units grow to Hero rank after 60 minutes. This increase starts at 0 minutes
+	"transportExpTimeM": { "zero": 9, "hero": 50 }, # enemy transports grow to Hero rank after 50 minutes. This increase starts at 9 minutes
 	"protectTimeM": 3,    # minutes until the first wave
 	"pauseM": 0.8,        # delay in minutes between waves
 	"inWavePauseS": 7,    # delay between landings within the same wave
 	"INCREM_PAUSEM": 0.1, # each wave, increase the delay between waves in minutes
 	"timeHandicapM": 2,   # slight lag in research for AI
 	"RESIDUAL": 0.03,     # a wave is considered defeated when only 3% of units remain
-                                     
-	"startHeight": 50,             # initial map height/radius
-	"expansionDirection": "all",   # expansion direction (north/east/south/west/all)
-	"expansionAmount": 24,         # tile growth after each wave
-	"transporterUnitCount": 45,    # number of units that land from each transporter
-	"transporterExperience": 9999, # give rank to the transporters (harder to kill)
-                                  
-	"Kpower": 0.15,        # linear wave growth factor, depends on time
-	"doublePowerM": 120,   # quadratic wave growth factor, depends on time
-	"startPowerC": 0,      # constant extra power
+
+	"mapExpansionPattern": "auto", # expansion pattern. ("north"/"east"/"south"/"west"/[["north","east","south","west]]/[["north"],["south"]])
+	"startHeight": "auto",         # initial map height/radius, in tiles
+	"expansionAmount": "auto",     # tile growth after each wave
+
+	"powerQ": 100,         # quadratic wave growth factor, depends on time
+	"powerL": 0.20,        # linear wave growth factor, depends on time
+	"powerC": 200,         # constant extra power
 	"Kfinal": 3,           # final wave power multiplier
 	"structPower": {       # allowed structure types
-		"DEFENSE": 0.01,   # amount of DEFENSE structures
-		"REARM PAD": 0.001 # amount of REARM PAD structures
-	},                             
-                          
+		"DEFENSE": 0.31,   # amount of DEFENSE structures
+		"REARM PAD": 0.02  # amount of REARM PAD structures
+	},
+
+	"flightDistanceQ": 0.0,     # quadratic wave growth factor, depends on time
+	"flightDistanceL": 0.0,     # linear wave growth factor, depends on time
+	"flightDistanceC": 0,       # constant extra power
+	"cyborgTransport": false,   # enemy transports are cyborg transports
+	"transporterUnitCount": 40, # number of units that land from each transporter
 	"waterLanding": false,            # units can land in water
 	"waterStructure": false,          # structures can appear on water
-	"enableWaveExperience": true,     # rank of enemy units increase over time
+	
 	"waveExperienceModifier": null,   # how fast enemy units gain experience (null = default)
 	"playerExperienceModifier": null, # how fast your units gain experience (null = default)
-	"playersManipulation": true       # change the player's base and limits
+	"autoBase": true,     # create a base automatically for the player
+	"recalcLimits": true, # adjust limits as players quit or as more oils are available
+	"forceLimits": false, # use fair limits for competitive play. only works for <= 4 players
+	"infinite": true,     # never end the game
 }
 ```
 Explanation for `componentWeights.json`:
@@ -131,11 +147,3 @@ Explanation for `startingComponents.json`:
 ]
 ```
 
-## Tricks & hints
-- Enemies don't make any difference between a structure or a droid. You could use cheap structures to distract them, and get some time
-- Enemy's droid templates do vary with time, but do not depend on your templates. Try to find more effective propulsion/body combinations.
-- Enemy doesn't have Sensors units, but has artillery and sensor towers.
-- In about an hour of game, number of enemies will start growing huge. You should try to win before that time mark.
-- You can delay next landing by leaving some enemy units alive for some time. This doesn't include VTOL, AA guns, and fortifications.
-- Don't forget to add more structures, as your limits increase.
-- About a half of enemy units will have fragile propulsion, so use heavy artillery to your advantage.

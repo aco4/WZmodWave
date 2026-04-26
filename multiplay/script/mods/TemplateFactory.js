@@ -1,362 +1,160 @@
 class TemplateFactory
 {
-	// componentID -> component
+	// Remap the provided Stats globals so they are more useful (ID -> component)
 	static WZBODY = TemplateFactory.convert(Stats.Body);
-	static WZWEAPON = TemplateFactory.convert(Stats.Weapon);
 	static WZPROPULSION = TemplateFactory.convert(Stats.Propulsion);
+	static WZWEAPON = TemplateFactory.convert(Stats.Weapon);
 
-	static DEFAULT_COMPONENT_WEIGHT = 100;
-
-	static convert(obj) // convert name -> component to id -> component
+	// Lazy generator for every possible combination of body, propulsion, and weapon (> 212520)
+	static *SUPERSET()
 	{
-		const result = {};
-		for (const [name, data] of Object.entries(obj)) {
-			result[data.Id] = { ...data, name };
-		}
-		return result;
-	}
-
-	static truck()
-	{
-		return {
-			name: "Truck Viper Wheels",
-			body: "Body1REC",
-			propulsion: "wheeled01",
-			weapons: ["Spade1Mk1"]
-		};
-	}
-
-	static RULES = [
-		{ // flying propulsions must use vtol weapons
-			propulsionPredicate: (propulsionID) => propulsionID == "V-Tol" || propulsionID == "Helicopter",
-			weaponFilter: (weaponID) => weaponID.toUpperCase().includes("VTOL"),
-		},
-		{ // non-flying propulsions must not use vtol weapons
-			propulsionPredicate: (propulsionID) => propulsionID != "V-Tol" && propulsionID != "Helicopter",
-			weaponFilter: (weaponID) => !weaponID.toUpperCase().includes("VTOL"),
-		},
-		{ // non-flying propulsions must not use vtol weapons
-			propulsionPredicate: (propulsionID) => propulsionID != "V-Tol" && propulsionID != "Helicopter",
-			weaponFilter: (weaponID) => !weaponID.toUpperCase().includes("VTOL"),
-		},
-		{ // cyborg bodies must use cyborg propulsion
-			bodyPredicate: (bodyID) => bodyID.toUpperCase().includes("CYB"),
-			propulsionFilter: (propulsionID) => propulsionID.toUpperCase().includes("CYB"),
-		},
-		{ // non-cyborg bodies must not use cyborg propulsion
-			bodyPredicate: (bodyID) => !bodyID.toUpperCase().includes("CYB"),
-			propulsionFilter: (propulsionID) => !propulsionID.toUpperCase().includes("CYB"),
-		},
-		{ // cyborg propulsions must use cyborg bodies
-			propulsionPredicate: (propulsionID) => propulsionID.toUpperCase().includes("CYB"),
-			bodyFilter: (bodyID) => bodyID.toUpperCase().includes("CYB"),
-		},
-		{ // cyborg light bodies must use cyborg weapons
-			bodyPredicate: (bodyID) => bodyID.toUpperCase().includes("CYBORGLIGHT"),
-			weaponFilter: (weaponID) => weaponID.toUpperCase().includes("CYB"),
-		},
-		{ // cyborg light bodies must not use heavy cyborg weapons
-			bodyPredicate: (bodyID) => bodyID.toUpperCase().includes("CYBORGLIGHT"),
-			weaponFilter: (weaponID) => !weaponID.toUpperCase().includes("CYB-HVY"),
-		},
-		{ // cyborg heavy bodies must use heavy cyborg weapons
-			bodyPredicate: (bodyID) => bodyID.toUpperCase().includes("CYBORGHEAVY"),
-			weaponFilter: (weaponID) => weaponID.toUpperCase().includes("CYB-HVY"),
-		},
-		{ // non-cyborg bodies must not use cyborg weapons
-			bodyPredicate: (bodyID) => !bodyID.toUpperCase().includes("CYB"),
-			weaponFilter: (weaponID) => !weaponID.toUpperCase().includes("CYB"),
-		},
-		{ // helicopter bodies must use vtol propulsion
-			bodyPredicate: (bodyID) => bodyID.toUpperCase().includes("CHOPPER"),
-			propulsionFilter: (propulsionID) => propulsionID == "V-Tol",
-		},
-		{ // transport bodies must use vtol propulsion
-			bodyPredicate: (bodyID) => TemplateFactory.WZBODY[bodyID].BodyClass.toUpperCase().includes("TRANSPORT"),
-			propulsionFilter: (propulsionID) => propulsionID == "V-Tol",
-		},
-		{ // baba bodies must use baba propulsion
-			bodyPredicate: (bodyID) => TemplateFactory.WZBODY[bodyID].BodyClass.toUpperCase().includes("BABA"),
-			propulsionFilter: (propulsionID) => propulsionID.toUpperCase().includes("BABA"),
-		},
-		{ // non-baba bodies must not use baba propulsion
-			bodyPredicate: (bodyID) => !TemplateFactory.WZBODY[bodyID].BodyClass.toUpperCase().includes("BABA"),
-			propulsionFilter: (propulsionID) => !propulsionID.toUpperCase().includes("BABA"),
-		},
-		{ // non-baba bodies must not use baba weapons
-			bodyPredicate: (bodyID) => !TemplateFactory.WZBODY[bodyID].BodyClass.toUpperCase().includes("BABA"),
-			weaponFilter: (weaponID) =>
-				!weaponID.toUpperCase().includes("BABA") &&
-				!weaponID.toUpperCase().includes("BUSCANNON") &&
-				!weaponID.toUpperCase().includes("JEEP") &&
-				!weaponID.toUpperCase().includes("BUGGY") &&
-				!weaponID.toUpperCase().includes("TRIKE"),
-		},
-
-		// Hardcoded baba templates
-
+		for (const bodyID of Object.keys(TemplateFactory.WZBODY))
 		{
-			bodyPredicate: (bodyID) => bodyID == "B1BaBaPerson01",
-			propulsionFilter: (propulsionID) => propulsionID == "BaBaLegs",
-			weaponFilter: (weaponID) => weaponID == "BaBaMG",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "BusBody",
-			weaponFilter: (weaponID) => weaponID == "BusCannon",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "FireBody",
-			weaponFilter: (weaponID) => weaponID == "BusCannon" || weaponID == "BabaFlame",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "B2JeepBody",
-			weaponFilter: (weaponID) => weaponID == "BJeepMG",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "B2RKJeepBody",
-			weaponFilter: (weaponID) => weaponID == "BabaRocket",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "B3body-sml-buggy01",
-			weaponFilter: (weaponID) => weaponID == "BuggyMG",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "B3bodyRKbuggy01",
-			weaponFilter: (weaponID) => weaponID == "BabaRocket",
-		},
-		{
-			bodyPredicate: (bodyID) => bodyID == "B4body-sml-trike01",
-			weaponFilter: (weaponID) => weaponID == "bTrikeMG",
-		},
-
-		// Custom rules
-
-		settings.rules.hoverFlame && { // hovers must use flame
-			propulsionPredicate: (propulsionID) => propulsionID == "hover01",
-			weaponFilter: (weaponID) => weaponID.toUpperCase().includes("FLAME"),
-		},
-		settings.rules.strongHover && { // viper, scorpion, mantis, and leopard must not use hover
-			bodyPredicate: (bodyID) =>
-				bodyID == "Body1REC" ||
-				bodyID == "Body8MBT" ||
-				bodyID == "Body12SUP" ||
-				bodyID == "Body2SUP",
-			propulsionFilter: (propulsionID) => propulsionID != "hover01",
-		},
-		settings.rules.lateTracks && { // non-T4 bodies must not use tracks
-			bodyPredicate: (bodyID) =>
-				bodyID != "Body3MBT" &&
-				bodyID != "Body7ABT" &&
-				bodyID != "Body10MBT" &&
-				bodyID != "Body13SUP" &&
-				bodyID != "Body14SUP",
-			propulsionFilter: (propulsionID) => propulsionID != "tracked01",
-		},
-		settings.rules.strongT4 && { // T4 bodies must not use half-tracks
-			bodyPredicate: (bodyID) =>
-				bodyID == "Body3MBT" ||
-				bodyID == "Body7ABT" ||
-				bodyID == "Body10MBT" ||
-				bodyID == "Body13SUP" ||
-				bodyID == "Body14SUP",
-			propulsionFilter: (propulsionID) => propulsionID != "HalfTrack",
-		},
-		settings.rules.noSnails && { // light bodies must not use heavy weapons
-			bodyPredicate: (bodyID) =>
-				bodyID == "Body1REC" ||
-				bodyID == "Body4ABT" ||
-				bodyID == "Body2SUP" ||
-				bodyID == "Body3MBT",
-			weaponFilter: (weaponID) =>
-				weaponID != "Cannon2A-TMk1" &&
-				weaponID != "Flame2" &&
-				weaponID != "Cannon6TwinAslt" &&
-				weaponID != "Rocket-IDF" &&
-				weaponID != "Cannon375mmMk1",
-		},
-	].filter(r => !!r);
-
-	constructor(timeSeconds = 0, data = {})
-	{
-		Object.assign(this, {
-			RESEARCH: {},
-			startingComponents: [],
-			redundantComponents: {},
-			componentWeights: {},
-			minimumResearchTime: {},
-			...data
-		})
-
-		this.bodies      = new Set();
-		this.propulsions = new Set();
-		this.weapons     = new Set();
-
-		for (const componentID of this.startingComponents)
-		{
-			if (this.componentWeights[componentID] <= 0) // disabled
+			for (const propulsionID of Object.keys(TemplateFactory.WZPROPULSION))
 			{
-				continue;
-			}
-			if (TemplateFactory.WZBODY[componentID])
-			{
-				this.bodies.add(componentID);
-			}
-			if (TemplateFactory.WZPROPULSION[componentID])
-			{
-				this.propulsions.add(componentID);
-			}
-			if (TemplateFactory.WZWEAPON[componentID])
-			{
-				this.weapons.add(componentID);
+				for (const weaponID of Object.keys(TemplateFactory.WZWEAPON))
+				{
+					const slots = TemplateFactory.WZBODY[bodyID].WeaponSlots;
+					const weaponIDs = Array(slots).fill(weaponID);
+					yield [bodyID, propulsionID, weaponIDs];
+				}
 			}
 		}
+	}
 
-		const redComponents = new Set();
+	static allComponents = (() => {
+		const allComponents = {};
+		for (const componentID of Object.keys(TemplateFactory.WZBODY))
+		{
+			allComponents[componentID] = 100;
+		}
+		for (const componentID of Object.keys(TemplateFactory.WZPROPULSION))
+		{
+			allComponents[componentID] = 100;
+		}
+		for (const componentID of Object.keys(TemplateFactory.WZWEAPON))
+		{
+			allComponents[componentID] = 100;
+		}
+		return allComponents;
+	})();
 
+	static from({
+		RESEARCH            = {},
+		redundantComponents = {},
+		componentWeights    = {},
+		minimumResearchTime = {},
+		startingComponents  = [],
+		gameTime = 0,
+		rules = {},
+	} = {})
+	{
+		const components = {};
+		const researches = [];
 		for (const [research, seconds] of Object.entries(minimumResearchTime))
 		{
-			if (seconds <= timeSeconds)
+			if (seconds <= gameTime)
 			{
-				for (const componentID of this.RESEARCH[research].resultComponents || [])
+				for (const componentID of RESEARCH[research].resultComponents || [])
 				{
-					if (this.componentWeights[componentID] <= 0) // disabled
-					{
-						continue;
-					}
-					if (TemplateFactory.WZBODY[componentID])
-					{
-						this.bodies.add(componentID);
-					}
-					if (TemplateFactory.WZPROPULSION[componentID])
-					{
-						this.propulsions.add(componentID);
-					}
-					if (TemplateFactory.WZWEAPON[componentID])
-					{
-						this.weapons.add(componentID);
-					}
+					components[componentID] = componentWeights[componentID] ?? 100;
 				}
-
-				for (const componentID of this.redundantComponents[research] || this.RESEARCH[research].redComponents || [])
-				{
-					redComponents.add(componentID);
-				}
+				researches.push(research);
+			}
+		}
+		for (const componentID of startingComponents)
+		{
+			components[componentID] = componentWeights[componentID] ?? 100;
+		}
+		for (const research of researches)
+		{
+			for (const componentID of redundantComponents[research] || RESEARCH[research].redComponents || [])
+			{
+				delete components[componentID];
 			}
 		}
 
-		for (const componentID of redComponents)
-		{
-			this.bodies     .delete(componentID);
-			this.propulsions.delete(componentID);
-			this.weapons    .delete(componentID);
-		}
+		return new TemplateFactory(components, [
+			...TemplateFactory.RULESETS.VTOL,
+			...TemplateFactory.RULESETS.CYBORG,
+			...TemplateFactory.RULESETS.BABA,
+			...Object.keys(rules).filter(k => rules[k]).map(r => TemplateFactory.RULES[r])
+		]);
+	}
 
-		// Build weigted random
-		this.bodyWeights = {};
-		for (const bodyID of this.bodies)
+	constructor(
+		components = TemplateFactory.allComponents,
+		rules = [
+			...TemplateFactory.RULESETS.VTOL,
+			...TemplateFactory.RULESETS.CYBORG,
+			...TemplateFactory.RULESETS.BABA,
+		]
+	)
+	{
+		this.rules = [...TemplateFactory.RULESETS.REQUIRED, ...rules].filter(r => !!r);
+
+		const allowed = [];
+		const frequency = new Map();
+		for (const [bodyID, propulsionID, weaponIDs] of TemplateFactory.SUPERSET())
 		{
-			this.bodyWeights[bodyID] = this.componentWeights[bodyID] ?? TemplateFactory.DEFAULT_COMPONENT_WEIGHT;
+			if (components[bodyID] &&
+				components[propulsionID] &&
+				weaponIDs.every(w => components[w]) &&
+				this.allowed(bodyID, propulsionID, weaponIDs))
+			{
+				frequency[bodyID]       = (frequency[bodyID]       ?? 0) + 1;
+				frequency[propulsionID] = (frequency[propulsionID] ?? 0) + 1;
+				frequency[weaponIDs[0]] = (frequency[weaponIDs[0]] ?? 0) + 1;
+				allowed.push([bodyID, propulsionID, weaponIDs]);
+			}
 		}
-		this.bodySelector = new WeightedRandom(this.bodyWeights);
+		const templates = new Map();
+		for (const [bodyID, propulsionID, weaponIDs] of allowed)
+		{
+			const bodyChance       = (components[bodyID]       ?? 0) / frequency[bodyID];
+			const propulsionChance = (components[propulsionID] ?? 0) / frequency[propulsionID];
+			const weaponChance     = (components[weaponIDs[0]] ?? 0) / frequency[weaponIDs[0]];
+			const overallChance = Math.ceil(Math.sqrt(bodyChance * propulsionChance * weaponChance));
+			// console(`${bodyID} ${propulsionID} ${weaponIDs} --- ${bodyChance} ${propulsionChance} ${weaponChance} --- ${overallChance}`);
+			templates.set([bodyID, propulsionID, weaponIDs], overallChance);
+		}
+		this.select = new WeightedRandom(templates).get;
 	}
 
 	produce()
 	{
-		if (this.bodies.length == 0 || this.propulsions.length == 0 || this.weapons.length == 0)
+		const template = this.select();
+		if (!template)
 		{
-			return TemplateFactory.truck();
+			return TemplateFactory.truck;
 		}
-
-		// Initialize
-		let availableBodyIDs = Array.from(this.bodies);
-		let availablePropulsionIDs = Array.from(this.propulsions);
-		let availableWeaponIDs = Array.from(this.weapons);
-		let propulsionFilters = [];
-		let weaponFilters = [];
-
-		// 1. Pick body
-		const bodyID = this.bodySelector.get();
-
-		// 2. Accumulate filters
-		for (const rule of TemplateFactory.RULES)
-		{
-			if (rule.bodyPredicate?.(bodyID))
-			{
-				if (rule.propulsionFilter)
-				{
-					propulsionFilters.push(rule.propulsionFilter);
-				}
-				if (rule.weaponFilter)
-				{
-					weaponFilters.push(rule.weaponFilter);
-				}
-			}
-		}
-
-		// 3. Apply propulsion filters
-		for (const propulsionFilter of propulsionFilters)
-		{
-			availablePropulsionIDs = availablePropulsionIDs.filter(propulsionFilter);
-		}
-		if (availablePropulsionIDs.length == 0)
-		{
-			// console("No available propulsion for", bodyID);
-			return TemplateFactory.truck();
-		}
-
-		// 4. Pick propulsion
-		const propulsionWeights = {};
-		for (const propulsionID of availablePropulsionIDs)
-		{
-			propulsionWeights[propulsionID] = this.componentWeights[propulsionID] ?? TemplateFactory.DEFAULT_COMPONENT_WEIGHT;
-		}
-		const propulsionID = new WeightedRandom(propulsionWeights).get();
-
-		// 5. Accumulate filters
-		for (const rule of TemplateFactory.RULES)
-		{
-			if (rule.propulsionPredicate?.(propulsionID))
-			{
-				if (rule.weaponFilter)
-				{
-					weaponFilters.push(rule.weaponFilter);
-				}
-			}
-		}
-
-		// 6. Apply weapon filters
-		for (const weaponFilter of weaponFilters)
-		{
-			availableWeaponIDs = availableWeaponIDs.filter(weaponFilter);
-		}
-		if (availableWeaponIDs.length == 0)
-		{
-			// console("No available weapon for", bodyID, propulsionID);
-			return TemplateFactory.truck();
-		}
-
-		// 7. Pick weapons
-		const weaponWeights = {};
-		for (const weaponID of availableWeaponIDs)
-		{
-			weaponWeights[weaponID] = this.componentWeights[weaponID] ?? TemplateFactory.DEFAULT_COMPONENT_WEIGHT;
-		}
-		const weaponIDs = [];
-		for (let i = 0; i < TemplateFactory.WZBODY[bodyID].WeaponSlots; i++)
-		{
-			const weaponID = new WeightedRandom(weaponWeights).get();
-			weaponIDs.push(weaponID);
-		}
-
 		return {
-			name: this.nameFrom(weaponIDs, bodyID, propulsionID),
-			body: bodyID,
-			propulsion: propulsionID,
-			weapons: weaponIDs,
+			name: TemplateFactory.nameFrom(...template),
+			body: template[0],
+			propulsion: template[1],
+			weapons: template[2],
 		};
 	}
 
-	nameFrom(weaponIDs, bodyID, propulsionID)
+	/**
+	* @returns {boolean} true if the template DOES NOT violate any rule
+	*/
+	allowed(bodyID, propulsionID, weaponIDs)
+	{
+		for (const rule of this.rules)
+		{
+			const template = { body: bodyID, propulsion: propulsionID, weapon: weaponIDs[0] };
+
+			if ((rule.if?.(template) && !rule.then?.(template)) ||
+				(rule.assert && !rule.assert?.(template)))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	static nameFrom(bodyID, propulsionID, weaponIDs)
 	{
 		const name = [];
 		for (const weaponID of weaponIDs)
@@ -367,4 +165,187 @@ class TemplateFactory
 		name.push(TemplateFactory.WZPROPULSION[propulsionID].name);
 		return name.join(" ");
 	}
+
+	static convert(obj) // convert [name -> component] to [ID -> component]
+	{
+		const result = {};
+		for (const [name, component] of Object.entries(obj)) {
+			result[component.Id] = { ...component, name };
+		}
+		return result;
+	}
+
+	// Fallback template
+	static truck = {
+		name: "Truck Viper Wheels",
+		body: "Body1REC",
+		propulsion: "wheeled01",
+		weapons: ["Spade1Mk1"]
+	};
+
+	static RULESETS = {
+		REQUIRED: [
+			{ // must not use ZNULL components
+				assert: ({body, propulsion, weapon}) =>
+					!body.toUpperCase().includes("ZNULL") &&
+					!propulsion.toUpperCase().includes("ZNULL") &&
+					!weapon.toUpperCase().includes("ZNULL"),
+			},
+		],
+		VTOL: [
+			{ // flying propulsions must use vtol weapons
+				if: ({propulsion}) => propulsion == "V-Tol" || propulsion == "Helicopter",
+				then: ({weapon}) => weapon.toUpperCase().includes("VTOL"),
+			},
+			{ // non-flying propulsions must not use vtol weapons
+				if: ({propulsion}) => propulsion != "V-Tol" && propulsion != "Helicopter",
+				then: ({weapon}) => !weapon.toUpperCase().includes("VTOL"),
+			},
+			{ // helicopter bodies must use vtol propulsion
+				if: ({body}) => body.toUpperCase().includes("CHOPPER"),
+				then: ({propulsion}) => propulsion == "V-Tol",
+			},
+			{ // transport bodies must use vtol propulsion
+				if: ({body}) => TemplateFactory.WZBODY[body].BodyClass.toUpperCase().includes("TRANSPORT"),
+				then: ({propulsion}) => propulsion == "V-Tol",
+			},
+		],
+		CYBORG: [
+			{ // cyborg bodies must use cyborg propulsion
+				if: ({body}) => body.toUpperCase().includes("CYB"),
+				then: ({propulsion}) => propulsion.toUpperCase().includes("CYB"),
+			},
+			{ // non-cyborg bodies must not use cyborg propulsion
+				if: ({body}) => !body.toUpperCase().includes("CYB"),
+				then: ({propulsion}) => !propulsion.toUpperCase().includes("CYB"),
+			},
+			{ // cyborg propulsions must use cyborg bodies
+				if: ({propulsion}) => propulsion.toUpperCase().includes("CYB"),
+				then: ({body}) => body.toUpperCase().includes("CYB"),
+			},
+			{ // non-cyborg propulsions must not use cyborg bodies
+				if: ({propulsion}) => !propulsion.toUpperCase().includes("CYB"),
+				then: ({body}) => !body.toUpperCase().includes("CYB"),
+			},
+			{ // cyborg light bodies must use cyborg weapons
+				if: ({body}) => body.toUpperCase().includes("CYBORGLIGHT"),
+				then: ({weapon}) => weapon.toUpperCase().includes("CYB"),
+			},
+			{ // cyborg light bodies must not use heavy cyborg weapons
+				if: ({body}) => body.toUpperCase().includes("CYBORGLIGHT"),
+				then: ({weapon}) => !weapon.toUpperCase().includes("CYB-HVY"),
+			},
+			{ // cyborg heavy bodies must use heavy cyborg weapons
+				if: ({body}) => body.toUpperCase().includes("CYBORGHEAVY"),
+				then: ({weapon}) => weapon.toUpperCase().includes("CYB-HVY"),
+			},
+			{ // non-cyborg bodies must not use cyborg weapons
+				if: ({body}) => !body.toUpperCase().includes("CYB"),
+				then: ({weapon}) => !weapon.toUpperCase().includes("CYB"),
+			},
+		],
+		BABA: [
+			{ // baba bodies must use baba propulsion
+				if: ({body}) => TemplateFactory.WZBODY[body].BodyClass.toUpperCase().includes("BABA"),
+				then: ({propulsion}) => propulsion.toUpperCase().includes("BABA"),
+			},
+			{ // non-baba bodies must not use baba propulsion
+				if: ({body}) => !TemplateFactory.WZBODY[body].BodyClass.toUpperCase().includes("BABA"),
+				then: ({propulsion}) => !propulsion.toUpperCase().includes("BABA"),
+			},
+			{ // non-baba bodies must not use baba weapons
+				if: ({body}) => !TemplateFactory.WZBODY[body].BodyClass.toUpperCase().includes("BABA"),
+				then: ({weapon}) =>
+					!weapon.toUpperCase().includes("BABA") &&
+					!weapon.toUpperCase().includes("BUSCANNON") &&
+					!weapon.toUpperCase().includes("JEEP") &&
+					!weapon.toUpperCase().includes("BUGGY") &&
+					!weapon.toUpperCase().includes("TRIKE"),
+			},
+			{ // person bodies must use BaBaLegs and BaBaMG
+				if: ({body}) => body.toUpperCase().includes("PERSON"),
+				then: ({propulsion, weapon}) => propulsion == "BaBaLegs" && weapon == "BaBaMG",
+			},
+			{ // non-person bodies must not use BaBaLegs
+				if: ({body}) => !body.toUpperCase().includes("PERSON"),
+				then: ({propulsion}) => propulsion != "BaBaLegs",
+			},
+			{ // bus body must use normal bus weapons
+				if: ({body}) => body == "BusBody",
+				then: ({weapon}) => weapon == "BusCannon" || weapon == "BabaFlame",
+			},
+			{ // firetruck body must use normal firetruck weapons
+				if: ({body}) => body == "FireBody",
+				then: ({weapon}) => weapon == "BusCannon" || weapon == "BabaFlame",
+			},
+			{ // jeep bodies must use BJeepMG
+				if: ({body}) => body.toUpperCase().includes("B2JEEPBODY"),
+				then: ({weapon}) => weapon == "BJeepMG",
+			},
+			{ // rocket jeep bodies must use BabaRocket
+				if: ({body}) => body.toUpperCase().includes("B2RKJEEPBODY"),
+				then: ({weapon}) => weapon == "BabaRocket",
+			},
+			{ // buggy bodies must use BuggyMG
+				if: ({body}) => body.toUpperCase().includes("B3BODY-SML-BUGGY01"),
+				then: ({weapon}) => weapon == "BuggyMG",
+			},
+			{ // rocket buggy bodies must use BabaRocket
+				if: ({body}) => body.toUpperCase().includes("B3BODYRKBUGGY01"),
+				then: ({weapon}) => weapon == "BabaRocket",
+			},
+			{ // trike bodies must use bTrikeMG
+				if: ({body}) => body.toUpperCase().includes("B4BODY-SML-TRIKE01"),
+				then: ({weapon}) => weapon == "bTrikeMG",
+			},
+		],
+	};
+
+	static RULES = {
+		hoverFlame: { // hovers must use flame
+			if: ({propulsion}) => propulsion == "hover01",
+			then: ({weapon}) => weapon.toUpperCase().includes("FLAME"),
+		},
+		strongHover: { // viper, scorpion, mantis, and leopard must not use hover
+			if: ({body}) =>
+				body == "Body1REC" ||
+				body == "Body8MBT" ||
+				body == "Body12SUP" ||
+				body == "Body2SUP",
+			then: ({propulsion}) => propulsion != "hover01",
+		},
+		lateTracks: { // non-T4 bodies must not use tracks
+			if: ({body}) =>
+				body != "Body3MBT" &&
+				body != "Body7ABT" &&
+				body != "Body10MBT" &&
+				body != "Body13SUP" &&
+				body != "Body14SUP",
+			then: ({propulsion}) => propulsion != "tracked01",
+		},
+		noT4halftracks: { // T4 bodies must not use half-tracks
+			if: ({body}) =>
+				body == "Body3MBT" ||
+				body == "Body7ABT" ||
+				body == "Body10MBT" ||
+				body == "Body13SUP" ||
+				body == "Body14SUP",
+			then: ({propulsion}) => propulsion != "HalfTrack",
+		},
+		noSnails: { // light bodies must not use heavy weapons
+			if: ({body}) => TemplateFactory.WZBODY[body].Power < 15000,
+			then: ({weapon}) => TemplateFactory.WZWEAPON[weapon].Weight < 5000,
+		},
+		noLongRange: { // must not use weapons with range greater than 11 tiles
+			assert: ({weapon}) => TemplateFactory.WZWEAPON[weapon].MaxRange <= (128 * 11),
+		},
+		cannonsOnly: { // must only use cannons or gauss
+			assert: ({weapon}) =>
+				TemplateFactory.WZWEAPON[weapon].ImpactClass === "CANNON" ||
+				TemplateFactory.WZWEAPON[weapon].ImpactClass === "GAUSS",
+		},
+		vtolOff: { // must not use vtol propulsion
+			assert: ({propulsion}) => propulsion != "V-Tol",
+		},
+	};
 };

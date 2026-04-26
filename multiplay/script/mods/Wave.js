@@ -5,78 +5,115 @@ class Wave
 		"ROYAL": 1,
 		"FINAL": 2,
 	};
+
+	// 0 = before any wave (setup time)
+	// 1 = Wave 1
+	// 2 = Wave 2
+	// 3 = ...
 	static number = 0;
-	static difficulty;
-	static AI;
-	static {
-		this.difficulty = 1;
-		if (scavengers != 0)
+
+	// The current Wave
+	static current;
+
+	// Wave player number
+	static AI = (() => {
+		for (let player = 0; player < maxPlayers; player++)
 		{
-			this.AI = scavengerPlayer;
-			this.difficulty = (scavengers + 2) / 3; //general danger of waves 1, 1.33
-		}
-		else
-		{
-			for (let playnum = 0; playnum < maxPlayers; playnum++)
+			if (Wave.is(player))
 			{
-				if (playerData[playnum].isAI && playerData[playnum].name == "Wave")
-				{
-					this.AI = playnum;
-					this.difficulty = (playerData[this.AI].difficulty + 1) / 3; //general danger of waves 0.66, 1, 1.33, 1.6
-				}
+				return player;
 			}
 		}
-	}
+		return scavengers === NO_SCAVENGERS ? null : scavengerPlayer;
+	})();
 
-	constructor()
-	{
-		this.currentExpansionDirection = this.getCurrentExpansionDirection();
-		Scrim.growDirection(this.currentExpansionDirection, settings.expansionAmount);
-
-		giveResearch(Wave.AI);
-
-		this.timeS = getTotalTimeS();
-		const { budget, rang, experience } = this.calcBudget(this.timeS);
-		this.type = this.isFinal ? Wave.type.FINAL : Wave.type.NORMAL;
-		this.droidBudget  = this.isFinal ? budget * settings.Kfinal : budget;
-		this.rang         = rang;
-		this.experience   = experience;
-		this.droids       = [];
-		this.unfinishedTransports = 0;
-		this.unitsLandedCount = 0;
-
-		const { droidZone, structZone } = this.getZones();
-		this.droidZone = droidZone;
-		this.pushStructs(structZone);
-		this.predetermine(this.timeS);
-	}
-
-	getCurrentExpansionDirection()
-	{
-		if (settings.expansionDirection == "all" )
+	// How many Wave AI bots
+	static countWaveAI = (() => {
+		let count = 0;
+		for (let player = 0; player < maxPlayers; player++)
 		{
-			const expansionOrder = ["north", "west", "south", "east"];
-			return expansionOrder[Wave.number % 4];
+			if (Wave.is(player))
+			{
+				count++;
+			}
+		}
+		return count;
+	})();
+
+	// Wave difficulty modifier
+	static difficulty = (() => {
+		if (Wave.AI == null)
+		{
+			return null;
+		}
+		else if (Wave.AI === scavengerPlayer)
+		{
+			switch (scavengers)
+			{
+				case NO_SCAVENGERS       : return 0.66;
+				case SCAVENGERS          : return 1.00;
+				case ULTIMATE_SCAVENGERS : return 1.33;
+			}
 		}
 		else
 		{
-			return settings.expansionDirection;
+			switch (playerData[Wave.AI].difficulty)
+			{
+				case SUPEREASY : return 0.33;
+				case EASY      : return 0.66;
+				case MEDIUM    : return 1.00;
+				case HARD      : return 1.33;
+				case INSANE    : return 1.66;
+			}
 		}
+	})();
+
+	static is(player)
+	{
+		return playerData[player].isAI && playerData[player].name === "Wave";
+	}
+
+	constructor(config)
+	{
+		// Save the current snapshot of the config, in case it changes
+		this.config = config;
+
+		// Set the transport HP
+		Upgrades[Wave.AI].Body["Transport Body"].HitPoints = this.config.transportHP;
+		Upgrades[Wave.AI].Body["Super Transport Body"].HitPoints = this.config.transportHP;
+
+		this.type = !this.config.infinite && Scrim.isMax ? Wave.type.FINAL : Wave.type.NORMAL;
+		this.timeS = getResearchTimeS();
+		this.waveNumber = Wave.number;
+		this.droidBudget = this.isFinal
+			? this.config.waveFinalMultiplier * this.config.wavePower
+			: this.config.wavePower;
+		this.borderFilter = this.isFinal
+			? mapExpander.key.split(",")
+			: mapExpander.getExpansionDirection(this.waveNumber);
+
+		// Add structures
+		this.pushStructs();
+
+		// Create transports but do not spawn them yet
+		this.maxFlightDistance = this.isFinal ? Infinity : this.config.transportFlyDistance;
+		this.transports = this.generateTransports();
+		this.totalDroidCount = Wave.getTotalDroidCount(this.transports);
 	}
 
 	get isSendingTransports()
 	{
-		return this.transports.length > 0;
+		return this.transports.some(t => !t.isSpawned);
 	}
 
 	get isDoneLanding()
 	{
-		return this.unfinishedTransports == 0;
+		return this.transports.every(t => t.isDone);
 	}
 
 	get isMostlyDefeated()
 	{
-		return this.currentDroidCount < this.residualAdjustment(this.totalDroidCount);
+		return this.currentDroidCount <= Math.ceil(this.totalDroidCount * this.config.waveResidual);
 	}
 
 	get isDefeated()
@@ -86,109 +123,84 @@ class Wave
 
 	get currentDroidCount()
 	{
-		return enumDroid(Wave.AI, "DROID_WEAPON").filter(d => !d.isVTOL && d.canHitGround).length;
+		return enumDroid(Wave.AI, DROID_WEAPON).filter(d => !d.isVTOL && d.canHitGround).length;
 	}
 
 	get isFinal()
 	{
-		return Scrim.isMax;
+		return this.type == Wave.type.FINAL;
 	}
 
 	get isNotFinal()
 	{
-		return !this.isFinal;
+		return this.type != Wave.type.FINAL;
 	}
 
-	residualAdjustment(unitCount)
+	generateTransports()
 	{
-		if (typeof settings.RESIDUAL == "number")
+		const { landFactory, waterFactory } = this.buildFactories(this.timeS);
+		WaveTransport.tiles = Array.from(Scrim.iterate(Scrim.droidArea));
+		WaveTransport.totalPower = this.droidBudget;
+		WaveTransport.factory.land = landFactory;
+		WaveTransport.factory.water = waterFactory;
+		WaveTransport.borderFilter = this.borderFilter;
+
+		return WaveTransport.makeTransports(
+			this.maxFlightDistance,
+			getExperienceNow(this.config.waveRankTimeM.zero, this.config.waveRankTimeM.hero),
+			this.config.transportCapacity,
+			this.config.cyborgTransport,
+			this.config.waterLanding
+		);
+	}
+
+	sendTransport()
+	{
+		for (const transport of this.transports)
 		{
-			return Math.ceil(unitCount * settings.RESIDUAL);
-		}
-		else
-		{
-			return Infinity; // disable residual adjustment
+			if (!transport.isSpawned)
+			{
+				transport.spawn();
+				return;
+			}
 		}
 	}
 
-	getZones()
+	/**
+	 * @param {number} timeS - time in seconds
+	 * @returns {object} landFactory, waterFactory
+	 */
+	buildFactories(timeS)
 	{
-		if (settings.landEverywhere)
+		if (this.config.crazyWaves)
 		{
-			return { droidZone: Scrim.structArea, structZone: null };
-		}
-		let droidZone = Scrim.droidArea;
-		let structZone = Scrim.structArea;
-
-		if (this.isFinal)
-		{
-			structZone.x1 = 0; // TODO still place structures. need to know how much the map expanded
-			structZone.y1 = 0;
-			structZone.x2 = 0;
-			structZone.y2 = 0;
-		}
-		else if (this.currentExpansionDirection == "north")
-		{
-			droidZone.y2 = droidZone.y1 + Math.max(1, settings.expansionAmount);
-			structZone.y2 = structZone.y1 + settings.expansionAmount;
-		}
-		else if (this.currentExpansionDirection == "east")
-		{
-			droidZone.x1 = droidZone.x2 - Math.max(1, settings.expansionAmount);
-			structZone.x1 = structZone.x2 - settings.expansionAmount;
-		}
-		else if (this.currentExpansionDirection == "south")
-		{
-			droidZone.y1 = droidZone.y2 - Math.max(1, settings.expansionAmount);
-			structZone.y1 = structZone.y2 - settings.expansionAmount;
-		}
-		else if (this.currentExpansionDirection == "west")
-		{
-			droidZone.x2 = droidZone.x1 + Math.max(1, settings.expansionAmount);
-			structZone.x2 = structZone.x1 + settings.expansionAmount;
+			return {
+				landFactory: new TemplateFactory(TemplateFactory.allComponents, [
+					...TemplateFactory.RULESETS.VTOL,
+					...TemplateFactory.RULESETS.CYBORG,
+					...TemplateFactory.RULESETS.BABA,
+					{
+						assert: ({propulsion}) => !propulsion.toUpperCase().includes("NAVAL"),
+					},
+					...Object.keys(this.config.waveUnits).filter(k => this.config.waveUnits[k]).map(r => TemplateFactory.RULES[r])
+				]),
+				waterFactory: null
+			};
 		}
 
-		return {
-			droidZone,
-			structZone
-		};
-	}
-
-	calcBudget(timeS)
-	{
-		const K = getNumOil() * settings.Kpower;
-		// Игрок по мере игры получает апы на ген, что проиводит к росуту доступных ресурсов.
-		// При первом приблежении вторая производная энергии по времени прямая с увеличением в два раза за 20 минут.
-		// Используем два способа компенсиовать одновременно.
-		// Первый: бюджет зависит от квадрата времени
-		const A = K / (settings.doublePowerM * 60);
-		const budget = Math.max(1, Math.round(
-			((K * timeS + A * timeS ** 2) / 2) * Wave.difficulty + settings.startPowerC
-		));
-		//Второй: опытом. При первом приближении юниты усиливаются +11% за каждый ранг.
-		//Опыт ограничен 16 рангом, вероятно. По этому делаем что бы к концу юниты были максимально злые.
-		const rang = Math.round((14 / (settings.totalGameTime * 60)) * timeS);
-
-		return {
-			budget: budget,
-			rang: rang,
-			experience: Math.round(2 ** rang)
-		};
-	}
-
-	predetermine(timeS)
-	{
-		const landFactory = new TemplateFactory(timeS, {
-			RESEARCH: allResearch,
-			startingComponents: startingComponents,
-			redundantComponents: redundantComponents,
-			componentWeights: componentWeights,
+		const landFactory = TemplateFactory.from({
+			RESEARCH            : allResearch,
+			componentWeights    : componentWeights,
+			startingComponents  : startingComponents,
+			redundantComponents : redundantComponents,
+			minimumResearchTime : minimumResearchTime,
+			rules: this.config.waveUnits,
+			gameTime: timeS
 		});
-		const waterFactory = settings.waterLanding ? new TemplateFactory(timeS, {
-			RESEARCH: allResearch,
-			startingComponents: startingComponents,
-			redundantComponents: redundantComponents,
-			componentWeights: {
+
+		const waterFactory = this.config.waterLanding ? TemplateFactory.from({
+			RESEARCH            : allResearch,
+			componentWeights    : {
 				...componentWeights,
 				"BaBaProp": 0,
 				"wheeled01": 0,
@@ -198,85 +210,71 @@ class Wave
 				"CyborgLightBody": 0,
 				"CyborgHeavyBody": 0
 			},
+			startingComponents  : startingComponents,
+			redundantComponents : redundantComponents,
+			minimumResearchTime : minimumResearchTime,
+			rules: this.config.waveUnits,
+			gameTime: timeS
 		}) : null;
 
-		let availableTiles = this.getDroidTiles();
-		shuffle(availableTiles);
-
-		this.transports = [];
-		this.totalDroidCount = 0;
-
-		while (this.droidBudget > 0 && availableTiles.length > 0)
-		{
-			const [x, y] = availableTiles.pop();
-
-			const virtualDroids = [];
-
-			BFS(x, y,
-				/* maxCount = */ settings.transporterUnitCount,
-				/* shape    = */ 25,
-				/* canVisit = */ (x, y) =>
-				{
-					return Scrim.contains(x, y, "droid")
-						&& terrainType(x, y) != TER_CLIFFFACE
-						&& (terrainType(x, y) != TER_WATER || settings.waterLanding)
-						&& !getObject(x, y);
-				},
-				/* visit = */ (x, y) =>
-				{
-					const virtualDroid = terrainType(x, y) == TER_WATER
-						? waterFactory?.produce()
-						: landFactory.produce();
-
-					if (virtualDroid == null || virtualDroid.name == "Truck Viper Wheels") // WARNING FAILURE
-					{
-						// console(`FACTORY FAILURE`);
-						return;
-					}
-
-					if (!makeTemplate(
-						Wave.AI,
-						virtualDroid.name,
-						virtualDroid.body,
-						virtualDroid.propulsion,
-						"",
-						...virtualDroid.weapons
-					))
-					{
-						console(`FAILED TO MAKE TEMPLATE ${virtualDroid.name}`);
-						return;
-					}
-					this.totalDroidCount++;
-					this.droidBudget -= makeTemplate(
-						Wave.AI,
-						virtualDroid.name,
-						virtualDroid.body,
-						virtualDroid.propulsion,
-						"",
-						...virtualDroid.weapons
-					).power;
-
-					virtualDroid.x = x;
-					virtualDroid.y = y;
-
-					virtualDroids.push(virtualDroid);
-				},
-				/* stop = */ () => this.droidBudget <= 0
-			);
-
-			this.transports.push({ x, y, virtualDroids });
-		}
-		this.unfinishedTransports = this.transports.length;
-		this.totalTransportCount = this.transports.length;
+		return { landFactory, waterFactory };
 	}
 
-	pushStructs(structZone)
+	/**
+	 * @param {WaveTransport[]} transports
+	 * @returns {number}
+	 */
+	static getTotalDroidCount(transports)
 	{
-		let availableStructs = getStructures(this.timeS);
-		let availableTiles = this.getStructTiles(structZone);
-		shuffle(availableTiles);
+		return transports.reduce(
+			(sum, transport) => sum + transport.numDroids(),
+			0,
+		);
+	}
 
-		for (const [type, multiplier] of Object.entries(settings.structPower))
+	getStructures(timeS)
+	{
+		const redComponents = new Set();
+		for (const [tech, seconds] of Object.entries(minimumResearchTime))
+		{
+			if (seconds <= timeS)
+			{
+				const red = redundantComponents[tech] || allResearch[tech].redComponents || [];
+				for (const componentID of red)
+				{
+					redComponents.add(componentID);
+				}
+			}
+		}
+
+		const allowedTypes = Object.keys(this.config.structPower);
+
+		let availableStructs = [];
+		for (const [id, struct] of Object.entries(allStructs))
+		{
+			if (!allowedTypes.includes(struct.type))
+			{
+				continue;
+			}
+			if (!isStructureAvailable(id, Wave.AI))
+			{
+				continue;
+			}
+			if (struct.weapons && redComponents.has(struct.weapons?.[0]))
+			{
+				continue;
+			}
+			availableStructs.push(id);
+		}
+		return availableStructs;
+	}
+
+	pushStructs()
+	{
+		let availableStructs = this.getStructures(this.timeS);
+		let availableTiles = shuffle(this.getStructTiles());
+
+		for (const [type, multiplier] of Object.entries(this.config.structPower))
 		{
 			let structureBudget = Math.round(this.droidBudget * multiplier);
 			let structs = availableStructs.filter(id => allStructs[id].type == type);
@@ -300,111 +298,45 @@ class Wave
 		}
 	}
 
-	getStructTiles(structZone)
+	/**
+	 * @returns {object[]} array of [x, y]
+	 */
+	getStructTiles()
 	{
-		let availableTiles = [];
-		for (const { x, y } of Scrim.iterate(structZone))
+		const structTiles = [];
+		for (const { x, y } of Scrim.iterate(Scrim.structArea))
 		{
-			if (terrainType(x, y) == TER_CLIFFFACE)
+			if (this.canBuildAt(x, y))
 			{
-				continue;
+				structTiles.push([x, y]);
 			}
-			if (settings.waterStructure == false && terrainType(x, y) == TER_WATER)
-			{
-				continue;
-			}
-			if (getObject(x, y))
-			{
-				continue;
-			}
-			availableTiles.push([x, y]);
 		}
-		return availableTiles;
+		return structTiles;
 	}
 
-	getDroidTiles()
+	/**
+	 * @param {number} x
+	 * @param {number} y
+	 * @returns {boolean}
+	 */
+	canBuildAt(x, y)
 	{
-		let availableTiles = [];
-		for (const { x, y } of Scrim.iterate(this.droidZone))
+		if (terrainType(x, y) == TER_CLIFFFACE)
 		{
-			if (terrainType(x, y) == TER_CLIFFFACE)
-			{
-				continue;
-			}
-			if (settings.waterLanding == false && terrainType(x, y) == TER_WATER)
-			{
-				continue;
-			}
-			if (getObject(x, y))
-			{
-				continue;
-			}
-			availableTiles.push([x, y]);
-
+			return false;
 		}
-		return availableTiles;
-	}
-
-	sendTransport()
-	{
-		const { x, y, virtualDroids } = this.transports.pop();
-		let finished = false;
-		const dropCargo = () => {
-			for (const virtualDroid of virtualDroids)
-			{
-				hackNetOff();
-				const droid = addDroid(
-					Wave.AI,
-					virtualDroid.x,
-					virtualDroid.y,
-					virtualDroid.name,
-					virtualDroid.body,
-					virtualDroid.propulsion,
-					"",
-					"",
-					...virtualDroid.weapons
-				);
-				if (settings.enableWaveExperience)
-				{
-					setDroidExperience(droid, this.experience);
-				}
-				hackNetOn();
-				this.droids.push(droid);
-				this.unitsLandedCount++;
-			}
-			finished = true;
-			if (this.totalTransportCount <= 5) {
-				Dropship.play("Incoming enemy transport");
-			}
-			this.unfinishedTransports--;
-		};
-
-		const spawnLocation = Dropship.snap({ x, y, margin: -10, border: this.currentExpansionDirection })
-
-		new Dropship(Wave.AI, spawnLocation.x, spawnLocation.y, {
-			experience: settings.transporterExperience,
-			cyborgTransport: settings.cyborgTransport,
-			objectives: [
-				Dropship.objective({
-					getLocation : (dropship) => { return { x, y }; },
-					isComplete  : (dropship) => dropship.isAt(x, y),
-					onComplete  : (dropship) => dropship.stop(),
-				}),
-				Dropship.objective("pause"),
-				Dropship.objective({
-					getLocation : null,
-					isComplete  : (dropship) => true,
-					onComplete  : (dropship) => dropCargo(),
-				}),
-				Dropship.objective(`depart${this.currentExpansionDirection}`)
-			],
-			onDeath: () =>
-			{
-				if (!finished)
-				{
-					this.unfinishedTransports--;
-				}
-			},
-		});
+		if (this.config.waterStructure === false && terrainType(x, y) === TER_WATER)
+		{
+			return false;
+		}
+		if (getObject(x, y))
+		{
+			return false;
+		}
+		if (Scrim.distToNearestBorder(x, y, Scrim.structArea, this.borderFilter) > this.config.structDistance)
+		{
+			return false;
+		}
+		return true;
 	}
 }

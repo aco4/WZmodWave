@@ -23,7 +23,7 @@ class Dropship {
     constructor(player = selectedPlayer, x = 0, y = 0, args = {}) {
         Object.assign(this, {
             cyborgTransport: false,
-            turret: "MG1-VTOL",
+            turret: "NULL-VTOL-Transport-Turret",
             objectives: [],
             onDeath: () => {},
             onMissionComplete: () => {},
@@ -39,7 +39,7 @@ class Dropship {
 
         hackNetOff();
         const body = this.cyborgTransport ? "TransporterBody" : "SuperTransportBody";
-        const droid = addDroid(player, x, y, "Dropship", body, "V-Tol", "", "", [this.turret]);
+        const droid = addDroid(player, x, y, "Dropship", body, "V-Tol", "", "", this.turret);
         setDroidExperience(droid, this.experience);
         hackNetOn();
 
@@ -54,9 +54,12 @@ class Dropship {
             Dropship.dropships.delete(this);
             return;
         }
-        if (this.currentObjective.isComplete(this)) {
+        if (this.currentObjective.isBlocked?.(this)) {
+            this.currentObjective.onBlocked(this);
+        } else if (this.currentObjective.isComplete(this)) {
             this.completeObjective();
-        } else {
+        }
+        if (!this.isMissionComplete) {
             this.gotoObjective();
         }
     }
@@ -67,9 +70,6 @@ class Dropship {
 
         if (this.isMissionComplete) {
             this.onMissionComplete(this);
-            Dropship.dropships.delete(this);
-        } else {
-            this.gotoObjective();
         }
     }
 
@@ -84,7 +84,7 @@ class Dropship {
         x = Math.max(1, Math.min(mapWidth - 1, x));
         y = Math.max(1, Math.min(mapHeight - 1, y));
         hackNetOff();
-        orderDroidLoc(this.droid, DORDER_MOVE, x, y); // TODO fails if object is occupying the tile
+        orderDroidLoc(this.droid, DORDER_MOVE, x, y); // WARNING fails if tall object
         hackNetOn();
     }
 
@@ -146,7 +146,7 @@ class Dropship {
                 return droid;
             }
         }
-        return null;
+        return getObject(DROID, scavengerPlayer, this.droidID);
     }
     get alive() {
         return this.droid != null;
@@ -166,18 +166,18 @@ class Dropship {
 
     static play(sound, player = null) {
         const SOUNDS = {
-            "LZ clear"                        : () => playSound("lz-clear.ogg"),
-            "Enemy transport detected"        : () => playSound("pcv381.ogg"),
-            "Incoming enemy transport"        : () => playSound("pcv395.ogg"),
-            "Enemy landing zone"              : () => playSound("pcv396.ogg"),
-            "Reinforcements are available"    : () => playSound("pcv440.ogg"),
-            "Reinforcements in transit"       : () => playSound("pcv441.ogg"),
-            "Reinforcements landing"          : () => playSound("pcv442.ogg"),
-            "Transport under attack"          : () => playSound("pcv443.ogg"),
-            "Transport repairing"             : () => playSound("pcv444.ogg"),
-            "LZ compromised"                  : () => playSound("pcv445.ogg"),
-            "Transport returning to base"     : () => playSound("pcv446.ogg"),
-            "Transport unable to land"        : () => playSound("pcv447.ogg"),
+            "LZ clear"                     : () => playSound("lz-clear.ogg"),
+            "Enemy transport detected"     : () => playSound("pcv381.ogg"),
+            "Incoming enemy transport"     : () => playSound("pcv395.ogg"),
+            "Enemy landing zone"           : () => playSound("pcv396.ogg"),
+            "Reinforcements are available" : () => playSound("pcv440.ogg"),
+            "Reinforcements in transit"    : () => playSound("pcv441.ogg"),
+            "Reinforcements landing"       : () => playSound("pcv442.ogg"),
+            "Transport under attack"       : () => playSound("pcv443.ogg"),
+            "Transport repairing"          : () => playSound("pcv444.ogg"),
+            "LZ compromised"               : () => playSound("pcv445.ogg"),
+            "Transport returning to base"  : () => playSound("pcv446.ogg"),
+            "Transport unable to land"     : () => playSound("pcv447.ogg"),
         };
         if (player === null || player === me) {
             SOUNDS[sound]?.();
@@ -199,17 +199,17 @@ class Dropship {
 
         if (border != null) {
             const B = border.toUpperCase();
-            if (B == "LEFT" || B == "WEST") {
+            if (B == "LEFT" || B == "WEST" || B == "X1") {
                 return { x: Math.max(1, x1 + 1 + margin), y: y };
             }
-            if (B == "RIGHT" || B == "EAST") {
-                return { x: Math.min(mapWidth - 1, mapWidth - 1 - margin), y: y };
+            if (B == "RIGHT" || B == "EAST" || B == "X2") {
+                return { x: Math.min(mapWidth - 1, x2 - margin), y: y };
             }
-            if (B == "TOP" || B == "NORTH") {
+            if (B == "TOP" || B == "UP" || B == "NORTH" || B == "Y1") {
                 return { x: x, y: Math.max(1, y1 + 1 + margin) };
             }
-            if (B == "BOTTOM" || B == "SOUTH") {
-                return { x: x, y: Math.min(mapHeight - 1, mapHeight - 1 - margin) };
+            if (B == "BOTTOM" || B == "DOWN" || B == "SOUTH" || B == "Y2") {
+                return { x: x, y: Math.min(mapHeight - 1, y2 - margin) };
             }
         }
 
@@ -237,30 +237,54 @@ class Dropship {
         };
     }
 
-    static objective(args = {}) {
-        if (typeof args === "string") {
-            const stockObjective = args.toLowerCase();
+    static objective = {
+        land: (x, y) => {
+            return {
+                getLocation : (dropship) => { return { x, y }; },
+                isBlocked   : (dropship) => false,
+                onBlocked   : (dropship) => {},
+                isComplete  : (dropship) => dropship.isAt(x, y),
+                onComplete  : (dropship) => dropship.stop(),
+            };
+        },
+        pause: () => {
+            return {
+                getLocation : null,
+                isBlocked   : (dropship) => false,
+                onBlocked   : (dropship) => {},
+                isComplete  : (dropship) => true,
+                onComplete  : (dropship) => {},
+            };
+        },
+        depart: (border = null) => {
+            return {
+                getLocation : (dropship) => Dropship.snap({x: dropship.x, y: dropship.y, margin: -250, border }),
+                isBlocked   : (dropship) => false,
+                onBlocked   : (dropship) => {},
+                isComplete  : (dropship) => dropship.isOutside(),
+                onComplete  : (dropship) => dropship.despawn(),
+            };
+        },
+    };
 
-            if (stockObjective == "depart") {
-                return {
-                    getLocation : (dropship) => Dropship.snap({x: dropship.x, y: dropship.y, margin: -250 }),
-                    isComplete  : (dropship) => dropship.isOutside(),
-                    onComplete  : (dropship) => dropship.despawn(),
-                };
-            }
-            if (stockObjective == "departnorth") {
-                return {
-                    getLocation : (dropship) => Dropship.snap({x: dropship.x, y: dropship.y, margin: -250, border: "north" }),
-                    isComplete  : (dropship) => dropship.isOutside(),
-                    onComplete  : (dropship) => dropship.despawn(),
-                };
-            }
-        }
-        return {
-            getLocation : null,
-            isComplete  : (dropship) => true,
-            onComplete  : (dropship) => {},
-            ...args
-        };
+    static TALL_OBJECTS = {
+        "A0CommandCentre": true,
+        "A0CommandCentreNP": true,
+        "A0CommandCentreCO": true,
+        "A0CommandCentreNE": true,
+        "A0ComDroidControl": true,
+        "WaterBuilding": true,
+        "WaterBuilding2": true,
+        "WreckedBuilding16": true,
+        "building1": true,
+        "building10": true,
+        "building11": true,
+        "building12": true,
+        "building2": true,
+        "building3": true,
+    };
+
+    static canMoveTo(x, y) {
+        return !Dropship.TALL_OBJECTS[getObject(x, y)?.id];
     }
 }
